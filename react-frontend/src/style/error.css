@@ -1,0 +1,56 @@
+/*Error Page*/
+.error-page {
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+}
+.error-page h1 {
+  font-family: "Overpass";
+  font-weight: 400;
+  font-size: 64px;
+  color: gray;
+  margin-block: 15px;
+}
+
+.error-page p {
+  text-align: center;
+  font-size: 24px;
+  color: gray;
+  margin-bottom: 0;
+}
+
+.error-page a.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+
+  width: 640px;
+  height: 70px;
+
+  background: #e6774a;
+  border: none;
+  border-radius: 80px;
+
+  box-shadow: 4px 8px 12px rgba(78, 99, 141, 0.06), inset 0px 4px 12px rgba(200, 211, 249, 0.6);
+
+  font-weight: 800;
+  font-size: 28px;
+  color: white;
+  text-decoration: none;
+}
+.error-page a.button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+#dino {
+  width: 265px;
+  height: auto;
+}

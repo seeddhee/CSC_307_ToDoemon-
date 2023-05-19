@@ -1,0 +1,104 @@
+/*Sign up page*/
+.signup-page {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.signup-page-left {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  align-items: center;
+  margin-top: 10%;
+}
+.signup-page-right {
+  margin-top: 0%;
+  margin-left: 3%;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  font-family: "Nunito", sans-serif;
+}
+.signup-page h1 {
+  font-style: normal;
+  font-family: "Quicksand";
+  font-weight: 700;
+  font-size: 52px;
+  color: #fea259;
+}
+.signup-page h2 {
+  font-family: "Overpass", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  color: #444b59;
+  margin: 15px 0 0 0;
+}
+
+.signup-page label {
+  font-weight: 600;
+  font-size: 28px;
+  color: #444b59;
+  margin-top: 2%;
+}
+
+.signup-page p {
+  font-weight: 400;
+  font-size: 20px;
+  color: #444b59;
+  margin-block: 0;
+}
+
+.signup-page a {
+  text-decoration: none;
+  color: #8699da;
+}
+
+.signup-page input {
+  width: 640px;
+  background: #ffffff;
+  border: 2px solid #789ade;
+  border-radius: 80px;
+
+  padding: 20px 28px;
+  gap: 10px;
+  font-size: 24px;
+  box-sizing: border-box;
+}
+.signup-page input[type="password"] {
+  font-family: Verdana;
+}
+::placeholder {
+  opacity: 60%;
+}
+.signup-page input:focus {
+  border: 2px solid #789ade;
+}
+
+a.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+
+  width: 640px;
+  height: 70px;
+
+  background: #e6774a;
+  border: none;
+  border-radius: 80px;
+
+  box-shadow: 4px 8px 12px rgba(78, 99, 141, 0.06), inset 0px 4px 12px rgba(200, 211, 249, 0.6);
+
+  font-weight: 800;
+  font-size: 28px;
+  color: white;
+  text-decoration: none;
+}
+a.button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
