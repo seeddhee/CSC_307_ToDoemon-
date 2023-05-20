@@ -1,31 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import LeftDiv from "../components/LeftDiv.js";
+import MyInput from "../components/MyInput.js";
+import LinkButton from "../components/LinkButton.js";
+import PageTitle from "../components/PageTitle.js";
 import "../style/login-style.css";
 
 function SignUpPage() {
   document.title = "Signup";
-  const dino = require("../images/happy_dino.png");
+  const happy_dino = require("../images/happy_dino.png");
   return (
-    <div className="signup-page">
-      <div className="signup-page-left">
-        <img id="dino" src={dino} alt="Happy Dino" />
-        <h1>TASKEMON</h1>
-      </div>
-      <div className="signup-page-right">
-        <h2>WELCOME!</h2>
-        <p>
-          Have an account? <Link>Sign in</Link>
-        </p>
-        <label htmlFor="username">Username</label>
-        <input type="text" id="username" placeholder="productivedino"></input>
-        <label htmlFor="password">Password</label>
-        <input type="password" id="password" placeholder="●●●●●●●●●"></input>
-        <label htmlFor="confirm-password">Confirm Password</label>
-        <input type="password" id="confirm-password" placeholder="●●●●●●●●●"></input>
+    <div className="login-style">
+      <LeftDiv dino={happy_dino} />
+      <div className="right-div">
+        <PageTitle title="WELCOME!" subtext="Have an account? " link="Sign In" to="/"></PageTitle>
 
-        <Link to="/forgot" className="button">
-          Sign Up
-        </Link>
+        <MyInput name="Username" type="text" placeholder="productivedino" />
+        <MyInput name="Password" type="password" placeholder="●●●●●●●●●" />
+        <MyInput name="Confirm Password" type="password" placeholder="●●●●●●●●●" />
+
+        <LinkButton location="/forgot" text="Sign Up" />
       </div>
     </div>
   );

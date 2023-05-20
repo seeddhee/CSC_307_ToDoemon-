@@ -1,36 +1,51 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css");
 /*Sign up page*/
-.signup-page {
+.login-style {
   display: flex;
-  margin-top: 15px;
-  margin-bottom: 30px;
   letter-spacing: 0.1em;
   line-height: 1.5;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.signup-page-left {
+.login-style .left-div {
   display: flex;
   flex-direction: column;
   width: 40%;
   align-items: center;
-  margin-top: 10%;
+  margin-top: 8%;
 }
-.signup-page-right {
-  margin-top: 0%;
-  margin-left: 3%;
+.login-style .right-div {
+  padding-left: 30px;
   display: flex;
   flex-direction: column;
   width: 60%;
   font-family: "Nunito", sans-serif;
 }
-.signup-page h1 {
+
+@media (max-width: 768px) {
+  .login-style {
+    flex-direction: column;
+    align-items: center;
+  }
+  .login-style .left-div,
+  .login-style .right-div {
+    width: 100%;
+  }
+  .dino-img {
+    display: none;
+  }
+}
+
+.login-style .left-div h1 {
   font-style: normal;
   font-family: "Quicksand";
   font-weight: 700;
   font-size: 52px;
   color: #fea259;
 }
-.signup-page h2 {
+.login-style h2 {
   font-family: "Overpass", sans-serif;
   font-weight: 800;
   font-size: 36px;
@@ -38,54 +53,62 @@
   margin: 15px 0 0 0;
 }
 
-.signup-page label {
-  font-weight: 600;
-  font-size: 28px;
-  color: #444b59;
-  margin-top: 2%;
-}
-
-.signup-page p {
+.login-style p {
   font-weight: 400;
   font-size: 20px;
   color: #444b59;
   margin-block: 0;
 }
 
-.signup-page a {
-  text-decoration: none;
-  color: #8699da;
+.my-input label {
+  font-weight: 600;
+  font-size: 28px;
+  color: #444b59;
+  padding-top: 30px;
 }
 
-.signup-page input {
-  width: 640px;
+.my-input {
+  display: flex;
+  flex-direction: column;
+}
+.my-input .password input {
+  width: 100%;
+}
+
+.my-input input {
+  max-width: 640px;
   background: #ffffff;
   border: 2px solid #789ade;
   border-radius: 80px;
-
   padding: 20px 28px;
-  gap: 10px;
-  font-size: 24px;
+  font-size: 22px;
   box-sizing: border-box;
 }
-.signup-page input[type="password"] {
+.my-input input[type="password"] {
   font-family: Verdana;
 }
 ::placeholder {
   opacity: 60%;
 }
-.signup-page input:focus {
+.my-input input:focus {
   border: 2px solid #789ade;
 }
 
-a.button {
+/*Eye Icon*/
+.my-input i {
+  margin-left: -8%;
+  cursor: pointer;
+}
+
+.link-button {
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 5%;
 
-  width: 640px;
-  height: 70px;
+  max-width: 640px;
+  min-height: 70px;
 
   background: #e6774a;
   border: none;
@@ -98,7 +121,17 @@ a.button {
   color: white;
   text-decoration: none;
 }
-a.button:hover {
+.link-button:hover {
   cursor: pointer;
   opacity: 0.8;
+}
+
+.page-title a {
+  text-decoration: none;
+  color: #789ade;
+}
+
+.dino-img {
+  max-width: 265px;
+  height: auto;
 }
