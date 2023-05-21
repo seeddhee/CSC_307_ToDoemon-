@@ -13,19 +13,12 @@ function ForgotPasswordPage() {
       <LeftDiv dino={winking_dino} />
       <div className="right-div">
         <PageTitle
-          title="Forgot Password?"
+          title="FORGOT PASSWORD?"
           subtext="Remember your password? "
           link="Sign in"
-          to="/signup"
+          to="/login"
         />
-        <p>
-          <br />
-          <br />
-          <br />
-          No worries, we&apos;ll send you reset instructions.
-          <br />
-          <br />
-        </p>
+        <p>No worries, we&apos;ll send you reset instructions.</p>
 
         <MyInput name="Username or Email" type="text" placeholder="productive_dino@gmail.com" />
         <LinkButton location="/signup" text="Reset Password" />

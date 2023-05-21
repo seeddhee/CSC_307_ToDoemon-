@@ -1,41 +1,31 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css");
 /*Sign up page*/
 .login-style {
+  min-height: 60svh;
+  margin: 0;
+  padding: 0;
   display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
   letter-spacing: 0.1em;
   line-height: 1.5;
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 .login-style .left-div {
+  align-self: center;
+
   display: flex;
   flex-direction: column;
-  width: 40%;
   align-items: center;
-  margin-top: 8%;
 }
 .login-style .right-div {
-  padding-left: 30px;
+  flex: 0.6;
   display: flex;
   flex-direction: column;
-  width: 60%;
+  justify-content: space-between;
   font-family: "Nunito", sans-serif;
-}
-
-@media (max-width: 768px) {
-  .login-style {
-    flex-direction: column;
-    align-items: center;
-  }
-  .login-style .left-div,
-  .login-style .right-div {
-    width: 100%;
-  }
-  .dino-img {
-    display: none;
-  }
 }
 
 .login-style .left-div h1 {
@@ -45,13 +35,6 @@
   font-size: 52px;
   color: #fea259;
 }
-.login-style h2 {
-  font-family: "Overpass", sans-serif;
-  font-weight: 800;
-  font-size: 36px;
-  color: #444b59;
-  margin: 15px 0 0 0;
-}
 
 .login-style p {
   font-weight: 400;
@@ -60,6 +43,75 @@
   margin-block: 0;
 }
 
+/* ErrorPage */
+.error-page {
+  flex: 0.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Nunito", sans-serif;
+}
+.error-page h2 {
+  font-family: "Overpass";
+  font-weight: 400;
+  font-size: 64px;
+  color: gray;
+  margin-block: 15px;
+}
+.error-page p {
+  padding-top: 30px;
+  text-align: center;
+  font-size: 24px;
+  color: gray;
+  margin-bottom: 0;
+}
+.error-page .link-button {
+  width: 100%;
+}
+
+.dino-img {
+  max-width: 265px;
+  height: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .login-style .right-div {
+    flex: 0.95;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .left-div h1 {
+    line-height: 0;
+  }
+  .dino-img {
+    display: none;
+  }
+}
+
+/* PageTitle */
+.page-title h2 {
+  font-family: "Overpass", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  color: #444b59;
+  margin: 15px 0 0 0;
+}
+
+.page-title p {
+  font-weight: 400;
+  font-size: 20px;
+  color: #444b59;
+  margin-block: 0;
+}
+
+.page-title a {
+  text-decoration: none;
+  color: #789ade;
+}
+
+/* MyInput */
 .my-input label {
   font-weight: 600;
   font-size: 28px;
@@ -94,12 +146,12 @@
   border: 2px solid #789ade;
 }
 
-/*Eye Icon*/
 .my-input i {
-  margin-left: -8%;
+  margin-left: -9%;
   cursor: pointer;
 }
 
+/* LinkButton */
 .link-button {
   text-decoration: none;
   display: flex;
@@ -126,12 +178,11 @@
   opacity: 0.8;
 }
 
-.page-title a {
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+}
+.remember-forgot a {
   text-decoration: none;
   color: #789ade;
-}
-
-.dino-img {
-  max-width: 265px;
-  height: auto;
 }
