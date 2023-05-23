@@ -14,8 +14,8 @@
 }
 
 .login-style .left-div {
-  align-self: center;
-
+  /* align-self: center; */
+  margin-top: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,6 +26,7 @@
   flex-direction: column;
   justify-content: space-between;
   font-family: "Nunito", sans-serif;
+  margin-bottom: 3vh;
 }
 
 .login-style .left-div h1 {
@@ -75,7 +76,7 @@
   height: auto;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 650px) {
   .login-style .right-div {
     flex: 0.95;
   }
@@ -130,6 +131,7 @@
 
 .my-input input {
   max-width: 640px;
+  max-height: 70px;
   background: #ffffff;
   border: 2px solid #789ade;
   border-radius: 80px;
@@ -148,7 +150,7 @@
 }
 
 .my-input i {
-  margin-left: -9%;
+  margin-left: -5vw;
   cursor: pointer;
   color: #9eb0ea;
   font-size: 20px;
@@ -187,6 +189,7 @@
   align-items: center;
   max-width: 620px;
   padding-top: 4svh;
+  font-size: 18px;
 }
 .remember-forgot a {
   text-decoration: none;
@@ -198,22 +201,46 @@
 }
 .remember label {
   align-self: center;
-  padding-left: 0.8vw;
+  color: #444b59;
+  margin-left: -0.5em;
 }
 
-.remember input {
-  /* color: #9eb0ea; */
+.round {
+  display: flex;
+}
 
+.round input {
+  width: 3em;
+  height: 3em;
   background-color: #fff;
-  margin: 0;
 
-  cursor: pointer;
+  border: 2px solid #9eb0ea;
+  border-radius: 50%;
+
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
 
   font: inherit;
-  color: #9eb0ea;
-  width: 1.75em;
-  height: 1.75em;
-  border: 0.15em solid currentColor;
+  margin: 0;
+  cursor: pointer;
+}
+
+.round label {
+  display: flex;
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+  font: inherit;
+  padding-left: 0;
+  left: -2.25em;
+  background-color: #9eb0ea;
+  cursor: pointer;
   border-radius: 50%;
-  /* transform: translateY(-0.075em); */
+  margin: 0;
+  opacity: 0;
+}
+
+.round input:checked + label {
+  opacity: 1;
 }

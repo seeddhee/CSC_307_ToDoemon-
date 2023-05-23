@@ -24,11 +24,16 @@ function LoginPage() {
 
         <div className="remember-forgot">
           <div className="remember">
-            <input type="checkbox"></input>
+            <div className="round">
+              <input type="checkbox" id="checkbox"></input>
+              <label htmlFor="checkbox"></label>
+            </div>
+
             <label htmlFor="remember-button">Remember me</label>
           </div>
           <Link to="/forgot">Forgot Password?</Link>
         </div>
+
         <LinkButton location="/forgot" text="Sign In" />
       </div>
     </div>
