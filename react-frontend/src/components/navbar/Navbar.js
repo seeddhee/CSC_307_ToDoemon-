@@ -4,7 +4,6 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { NavbarData } from "./NavbarData";
-import "../../MyApp";
 import { IconContext } from "react-icons";
 
 function Navbar() {

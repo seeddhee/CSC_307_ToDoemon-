@@ -3,7 +3,6 @@ import React, { Fragment } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Route, Link, Outlet } from "react-router-dom";
 import Dashboard from "./routes/Dashboard";
-import MyApp from "./MyApp";
 import Shop from "./routes/Shop";
 import Tasks from "./routes/Tasks";
 import Pet from "./routes/Pet";
