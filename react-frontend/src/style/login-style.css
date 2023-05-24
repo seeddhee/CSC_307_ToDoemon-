@@ -150,7 +150,7 @@
   border: 3px solid #789ade;
   outline: none;
 }
-
+/* Password Eye */
 .my-input i {
   margin-left: -5vw;
   cursor: pointer;
@@ -198,6 +198,7 @@
   color: #789ade;
 }
 
+/* Remember Me Label */
 .remember {
   display: flex;
 }
@@ -207,6 +208,7 @@
   margin-left: -0.5em;
 }
 
+/* Remember Me Button */
 .round {
   display: flex;
 }
