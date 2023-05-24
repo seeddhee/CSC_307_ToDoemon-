@@ -1,6 +1,6 @@
 import React from "react";
 import "../style/login-style.css";
-import LinkButton from "../components/LinkButton";
+import LinkButton from "../components/login/LinkButton";
 
 function ErrorPage() {
   document.title = "404";
@@ -14,7 +14,7 @@ function ErrorPage() {
           Page not found. <br />
           There is nothing to see here
         </p>
-        <LinkButton text="Go to Dashboard" location="/forgot" />
+        <LinkButton text="Go to Dashboard" location="/dashboard" />
       </div>
     </div>
   );

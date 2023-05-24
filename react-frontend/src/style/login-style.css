@@ -15,7 +15,7 @@
 
 .login-style .left-div {
   /* align-self: center; */
-  margin-top: 10vh;
+  margin-top: 13vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,6 +26,7 @@
   flex-direction: column;
   justify-content: space-between;
   font-family: "Nunito", sans-serif;
+  margin-top: 3vh;
   margin-bottom: 3vh;
 }
 
@@ -146,7 +147,8 @@
   opacity: 60%;
 }
 .my-input input:focus {
-  border: 2px solid #789ade;
+  border: 3px solid #789ade;
+  outline: none;
 }
 
 .my-input i {
@@ -224,6 +226,10 @@
   font: inherit;
   margin: 0;
   cursor: pointer;
+}
+
+.round input:checked {
+  border: 3px solid #9eb0ea;
 }
 
 .round label {

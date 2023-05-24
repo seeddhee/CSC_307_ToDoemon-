@@ -1,8 +1,8 @@
 import React from "react";
-import LeftDiv from "../components/LeftDiv.js";
-import MyInput from "../components/MyInput.js";
-import LinkButton from "../components/LinkButton.js";
-import PageTitle from "../components/PageTitle.js";
+import LeftDiv from "../components/login/LeftDiv.js";
+import MyInput from "../components/login/MyInput.js";
+import LinkButton from "../components/login/LinkButton.js";
+import PageTitle from "../components/login/PageTitle.js";
 import "../style/login-style.css";
 
 function SignUpPage() {
@@ -19,7 +19,7 @@ function SignUpPage() {
         <MyInput name="Password" type="password" placeholder="●●●●●●●●●" />
         <MyInput name="Confirm Password" type="password" placeholder="●●●●●●●●●" />
 
-        <LinkButton location="/forgot" text="Sign Up" />
+        <LinkButton location="/dashboard" text="Sign Up" />
       </div>
     </div>
   );

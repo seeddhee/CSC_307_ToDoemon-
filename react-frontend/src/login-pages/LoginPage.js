@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import LeftDiv from "../components/LeftDiv.js";
-import MyInput from "../components/MyInput.js";
-import LinkButton from "../components/LinkButton.js";
-import PageTitle from "../components/PageTitle.js";
+import LeftDiv from "../components/login/LeftDiv.js";
+import MyInput from "../components/login/MyInput.js";
+import LinkButton from "../components/login/LinkButton.js";
+import PageTitle from "../components/login/PageTitle.js";
 import "../style/login-style.css";
 
 function LoginPage() {
+  /* eslint-disable no-unused-vars */
+  const [user, setUser] = useState({
+    username: "",
+    password: ""
+  });
+
   document.title = "Login";
   const happy_dino = require("../images/happy_dino.png");
   return (
@@ -34,7 +40,7 @@ function LoginPage() {
           <Link to="/forgot">Forgot Password?</Link>
         </div>
 
-        <LinkButton location="/forgot" text="Sign In" />
+        <LinkButton location="/dashboard" text="Sign In" />
       </div>
     </div>
   );

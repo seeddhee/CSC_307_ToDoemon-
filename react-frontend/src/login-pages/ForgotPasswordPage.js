@@ -1,9 +1,9 @@
 import React from "react";
 import "../style/login-style.css";
-import LeftDiv from "../components/LeftDiv.js";
-import MyInput from "../components/MyInput.js";
-import LinkButton from "../components/LinkButton";
-import PageTitle from "../components/PageTitle";
+import LeftDiv from "../components/login/LeftDiv.js";
+import MyInput from "../components/login/MyInput.js";
+import LinkButton from "../components/login/LinkButton";
+import PageTitle from "../components/login/PageTitle";
 
 function ForgotPasswordPage() {
   document.title = "Forgot Password";
@@ -21,7 +21,7 @@ function ForgotPasswordPage() {
         <p>No worries, we&apos;ll send you reset instructions.</p>
 
         <MyInput name="Username or Email" type="text" placeholder="productive_dino@gmail.com" />
-        <LinkButton location="/signup" text="Reset Password" />
+        <LinkButton location="/login" text="Reset Password" />
       </div>
     </div>
   );
