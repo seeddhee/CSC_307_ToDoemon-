@@ -1,19 +1,22 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { Fragment } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Route, Link, Outlet } from "react-router-dom";
 import Dashboard from "./routes/Dashboard";
-import MyApp from "./MyApp";
 import Shop from "./routes/Shop";
 import Tasks from "./routes/Tasks";
 import Pet from "./routes/Pet";
 import Settings from "./routes/Settings";
 import Navbar from "./components/navbar/Navbar";
+import ErrorPage from "./login-pages/ErrorPage";
+import SignUpPage from "./login-pages/SignUpPage";
+import ForgotPasswordPage from "./login-pages/ForgotPasswordPage";
+import LoginPage from "./login-pages/LoginPage";
 import "./MyApp.css";
 
 const AppLayout = () => (
   <>
-    <Navbar />
+    {/* <Navbar /> */}
     <Outlet />
   </>
 );
@@ -25,32 +28,72 @@ const router = createBrowserRouter([
       {
         //element - is the component page. If changed to MyApp page will process.
         path: "/",
-        element: <Dashboard />
+        element: (
+          <Fragment>
+            <Navbar /> <Dashboard />{" "}
+          </Fragment>
+        )
       },
       {
         path: "dashboard",
-        element: <Dashboard />
+        element: (
+          <Fragment>
+            <Navbar /> <Dashboard />{" "}
+          </Fragment>
+        )
       },
       {
         path: "shop",
-        element: <Shop />
+        element: (
+          <Fragment>
+            <Navbar /> <Shop />{" "}
+          </Fragment>
+        )
       },
       {
         path: "tasks",
-        element: <Tasks />
+        element: (
+          <Fragment>
+            <Navbar /> <Tasks />{" "}
+          </Fragment>
+        )
       },
       {
         path: "pet",
-        element: <Pet />
+        element: (
+          <Fragment>
+            <Navbar /> <Pet />{" "}
+          </Fragment>
+        )
       },
       {
         path: "settings",
-        element: <Settings />
+        element: (
+          <Fragment>
+            <Navbar /> <Settings />{" "}
+          </Fragment>
+        )
       },
       {
         //Will we have a signout page?
         path: "signout",
-        element: <Dashboard />
+        element: <LoginPage />
+      },
+      {
+        path: "login",
+        element: <LoginPage />
+      },
+      {
+        path: "signup",
+        element: <SignUpPage />
+      },
+      {
+        path: "forgot",
+        element: <ForgotPasswordPage />
+      },
+      {
+        path: "*",
+        element: <ErrorPage />
       }
     ]
   }
