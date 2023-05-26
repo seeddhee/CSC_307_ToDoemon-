@@ -15,25 +15,23 @@
 .settings {
   display: flex;
   height: 100vh;
-  top: 0;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
   color: #000000;
 }
 
-
 /* Navbar CSS */
 .nav-menu {
   background-color: #ffffff;
   height: 100vh;
-  width: 15vw;
+  width: 10%;
   min-width: 200px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   /* background-color: #8CB369; */
-  background-color: #5B8E7D;
+  background-color: #5cb38e;
   padding-top: 60px;
 }
 
@@ -70,4 +68,3 @@
 span {
   margin-left: 16px;
 }
-
