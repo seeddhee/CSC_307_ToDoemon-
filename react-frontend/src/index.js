@@ -12,7 +12,7 @@ import ErrorPage from "./login-pages/ErrorPage";
 import SignUpPage from "./login-pages/SignUpPage";
 import ForgotPasswordPage from "./login-pages/ForgotPasswordPage";
 import LoginPage from "./login-pages/LoginPage";
-import "./MyApp.css";
+import "./index.css";
 
 const AppLayout = () => (
   <>
