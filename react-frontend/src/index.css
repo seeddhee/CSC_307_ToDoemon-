@@ -11,8 +11,7 @@
 .dashboard,
 .shop,
 .tasks,
-.pet,
-.settings {
+.pet {
   display: flex;
   height: 100vh;
   align-items: center;
@@ -33,6 +32,7 @@
   /* background-color: #8CB369; */
   background-color: #5cb38e;
   padding-top: 60px;
+  /*   */
 }
 
 .nav-text {
