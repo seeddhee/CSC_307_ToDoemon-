@@ -13,10 +13,15 @@ function MyInput(props) {
           <input
             type={passwordShown ? "text" : "password"}
             id={props.name}
-            placeholder={props.placeholder}></input>
+            placeholder={props.placeholder}
+            onChange={props.onChange}
+            value={props.value}
+            className={props.className}
+          />
           <i
             className={passwordShown ? "far fa-eye" : "far fa-eye-slash"}
-            onClick={togglePassword}></i>
+            onClick={togglePassword}
+          />
         </div>
       </div>
     );
@@ -24,7 +29,14 @@ function MyInput(props) {
   return (
     <div className="my-input">
       <label htmlFor={props.name}>{props.name}</label>
-      <input type={props.type} id={props.name} placeholder={props.placeholder}></input>
+      <input
+        type={props.type}
+        id={props.name}
+        placeholder={props.placeholder}
+        onChange={props.onChange}
+        value={props.value}
+        className={props.className}
+      />
     </div>
   );
 }
