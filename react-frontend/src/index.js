@@ -55,11 +55,16 @@ const router = createBrowserRouter([
         //element - is the component page. If changed to MyApp page will process.
         path: "/",
         element: (
+          <PrivateRoute
+          isAuthenticated={isAuthenticated}
+          element={() => (
           <Fragment>
             <Navbar /> <Dashboard />{" "}
           </Fragment>
-        )
-      },
+            )}
+            />
+          )
+        },
       {
         path: "dashboard",
         element: (
