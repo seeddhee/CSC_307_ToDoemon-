@@ -1,7 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React, { Fragment } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider, Route, Navigate, Link, Outlet } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Navigate,
+  Link,
+  Outlet
+} from "react-router-dom";
 import Dashboard from "./routes/Dashboard";
 import Shop from "./routes/Shop";
 import Tasks from "./routes/Tasks";
@@ -17,7 +24,6 @@ import "./index.css";
 const [isAuthenticated, setIsAuthenticated] = useState(false);
 
 const handleLogin = () => {
-  // Authentication logic
   // Validate username and password, maybe use from LoginPage?
 
   // If authentication is successful
@@ -25,7 +31,6 @@ const handleLogin = () => {
 };
 
 const handleLogout = () => {
-  // Logout logic
   // Clear tokens or session data
 
   // Reset authentication status
@@ -56,24 +61,24 @@ const router = createBrowserRouter([
         path: "/",
         element: (
           <PrivateRoute
-          isAuthenticated={isAuthenticated}
-          element={() => (
-          <Fragment>
-            <Navbar /> <Dashboard />{" "}
-          </Fragment>
+            isAuthenticated={isAuthenticated}
+            element={() => (
+              <Fragment>
+                <Navbar /> <Dashboard />{" "}
+              </Fragment>
             )}
-            />
-          )
-        },
+          />
+        )
+      },
       {
         path: "dashboard",
         element: (
           <PrivateRoute
-          isAuthenticated={isAuthenticated}
-          element={() => (
-          <Fragment>
-            <Navbar /> <Dashboard />{" "}
-          </Fragment>
+            isAuthenticated={isAuthenticated}
+            element={() => (
+              <Fragment>
+                <Navbar /> <Dashboard />{" "}
+              </Fragment>
             )}
           />
         )
@@ -82,53 +87,53 @@ const router = createBrowserRouter([
         path: "shop",
         element: (
           <PrivateRoute
-          isAuthenticated={isAuthenticated}
-          element={() => (
-          <Fragment>
-            <Navbar /> <Shop />{" "}
-          </Fragment>
+            isAuthenticated={isAuthenticated}
+            element={() => (
+              <Fragment>
+                <Navbar /> <Shop />{" "}
+              </Fragment>
             )}
           />
-         )
+        )
       },
       {
         path: "tasks",
         element: (
           <PrivateRoute
-          isAuthenticated={isAuthenticated}
-          element={() => (
-          <Fragment>
-            <Navbar /> <Tasks />{" "}
-          </Fragment>
+            isAuthenticated={isAuthenticated}
+            element={() => (
+              <Fragment>
+                <Navbar /> <Tasks />{" "}
+              </Fragment>
             )}
           />
-         )
+        )
       },
       {
         path: "pet",
         element: (
           <PrivateRoute
-          isAuthenticated={isAuthenticated}
-          element={() => (
-          <Fragment>
-            <Navbar /> <Pet />{" "}
-          </Fragment>
+            isAuthenticated={isAuthenticated}
+            element={() => (
+              <Fragment>
+                <Navbar /> <Pet />{" "}
+              </Fragment>
             )}
           />
-         )
+        )
       },
       {
         path: "settings",
         element: (
           <PrivateRoute
-          isAuthenticated={isAuthenticated}
-          element={() => (
-          <Fragment>
-            <Navbar /> <Settings />{" "}
-          </Fragment>
+            isAuthenticated={isAuthenticated}
+            element={() => (
+              <Fragment>
+                <Navbar /> <Settings />{" "}
+              </Fragment>
             )}
           />
-         )
+        )
       },
       {
         //Will we have a signout page?
