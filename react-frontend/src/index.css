@@ -8,9 +8,15 @@
   font-family: "Lato", sans-serif;
 }
 
+span {
+  margin-left: 16px;
+}
+
+
 /*Main wrapper holding all items*/
-.wrapper{
+.wrapper-body{
   display: flex;
+  flex-flow: row;
 }
 
 /*Shell Pages - base styles*/
@@ -20,26 +26,22 @@
 .pet {
   display: flex;
   height: 100vh;
-  align-items: center;
-  justify-content: center;
   font-size: 3rem;
   color: #000000;
+  align-items: center;
+  justify-content: center;
 }
-
 
 /* Navbar CSS */
 .nav-menu {
-  background-color: #ffffff;
+  display: flex;
   height: 100vh;
   width: 10%;
-  min-width: 200px;
-  position: fixed;
-  top: 50px;
+  min-width: 300px;
+  top: 80px;
   left: 0;
-  /* background-color: #8CB369; */
-  background-color: #5cb38e;
+  background: #5B8E7D;;
   padding-top: 60px;
-  /*   */
 }
 
 .nav-text {
@@ -53,7 +55,7 @@
 
 .nav-text a {
   text-decoration: none;
-  color: #151414;
+  color: #FFFDFD;
   font-size: 18px;
   width: 95%;
   height: 100%;
@@ -64,8 +66,8 @@
 }
 
 .nav-text a:hover {
-  background-color: #000000;
-  color: #fff;
+  background-color: #ffffff;
+  color: #E6774A;
 }
 
 .nav-menu-items {
@@ -73,13 +75,9 @@
 }
 
 
-span {
-  margin-left: 16px;
-}
-
-
 /*Top Navagation*/
 .topnav {
+  flex: 1 0 100%;
   display: flex;
   flex-grow: 1;
   flex-direction: row;

@@ -14,12 +14,11 @@ import ForgotPasswordPage from "./login-pages/ForgotPasswordPage";
 import LoginPage from "./login-pages/LoginPage";
 import TopNavbar from "./components/navbar/TopNavbar";
 import "./index.css";
-
 const AppLayout = () => (
-  <div className="wrapper">
+  <>
     {/* <Navbar /> */}
     <Outlet />
-  </div>
+  </>
 );
 
 const router = createBrowserRouter([
@@ -32,6 +31,9 @@ const router = createBrowserRouter([
         element: (
           <Fragment>
             <TopNavbar />
+            <div className="wrapper-body">
+              <Navbar /> <Dashboard />{" "}
+            </div>
           </Fragment>
         )
       },
@@ -40,6 +42,9 @@ const router = createBrowserRouter([
         element: (
           <Fragment>
             <TopNavbar />
+            <div className="wrapper-body">
+              <Navbar /> <Dashboard />{" "}
+            </div>
           </Fragment>
         )
       },
@@ -48,7 +53,9 @@ const router = createBrowserRouter([
         element: (
           <Fragment>
             <TopNavbar />
-            <Navbar /> <Shop />{" "}
+            <div className="wrapper-body">
+              <Navbar /> <Shop />{" "}
+            </div>
           </Fragment>
         )
       },
@@ -57,7 +64,9 @@ const router = createBrowserRouter([
         element: (
           <Fragment>
             <TopNavbar />
-            <Navbar /> <Tasks />{" "}
+            <div className="wrapper-body">
+              <Navbar /> <Tasks />{" "}
+            </div>
           </Fragment>
         )
       },
@@ -66,7 +75,9 @@ const router = createBrowserRouter([
         element: (
           <Fragment>
             <TopNavbar />
-            <Navbar /> <Pet />{" "}
+            <div className="wrapper-body">
+              <Navbar /> <Pet />{" "}
+            </div>
           </Fragment>
         )
       },
@@ -75,7 +86,9 @@ const router = createBrowserRouter([
         element: (
           <Fragment>
             <TopNavbar />
-            <Navbar /> <Settings />{" "}
+            <div className="wrapper-body">
+              <Navbar /> <Settings />{" "}
+            </div>
           </Fragment>
         )
       },

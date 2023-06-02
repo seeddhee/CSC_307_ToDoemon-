@@ -21,3 +21,6 @@ IDE Plugins that will be useful:
 
 Navagation
 npm install react-router react-icons
+
+Icon gallery
+https://react-icons.github.io/react-icons
