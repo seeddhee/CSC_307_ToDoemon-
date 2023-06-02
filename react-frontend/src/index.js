@@ -32,7 +32,6 @@ const router = createBrowserRouter([
         element: (
           <Fragment>
             <TopNavbar />
-            <Navbar /> <Dashboard />{" "}
           </Fragment>
         )
       },
@@ -41,7 +40,6 @@ const router = createBrowserRouter([
         element: (
           <Fragment>
             <TopNavbar />
-            <Navbar /> <Dashboard />{" "}
           </Fragment>
         )
       },
