@@ -12,13 +12,14 @@ import ErrorPage from "./login-pages/ErrorPage";
 import SignUpPage from "./login-pages/SignUpPage";
 import ForgotPasswordPage from "./login-pages/ForgotPasswordPage";
 import LoginPage from "./login-pages/LoginPage";
+import TopNavbar from "./components/navbar/TopNavbar";
 import "./index.css";
 
 const AppLayout = () => (
-  <>
+  <div className="wrapper">
     {/* <Navbar /> */}
     <Outlet />
-  </>
+  </div>
 );
 
 const router = createBrowserRouter([
@@ -30,6 +31,7 @@ const router = createBrowserRouter([
         path: "/",
         element: (
           <Fragment>
+            <TopNavbar />
             <Navbar /> <Dashboard />{" "}
           </Fragment>
         )
@@ -38,6 +40,7 @@ const router = createBrowserRouter([
         path: "dashboard",
         element: (
           <Fragment>
+            <TopNavbar />
             <Navbar /> <Dashboard />{" "}
           </Fragment>
         )
@@ -46,6 +49,7 @@ const router = createBrowserRouter([
         path: "shop",
         element: (
           <Fragment>
+            <TopNavbar />
             <Navbar /> <Shop />{" "}
           </Fragment>
         )
@@ -54,6 +58,7 @@ const router = createBrowserRouter([
         path: "tasks",
         element: (
           <Fragment>
+            <TopNavbar />
             <Navbar /> <Tasks />{" "}
           </Fragment>
         )
@@ -62,6 +67,7 @@ const router = createBrowserRouter([
         path: "pet",
         element: (
           <Fragment>
+            <TopNavbar />
             <Navbar /> <Pet />{" "}
           </Fragment>
         )
@@ -70,6 +76,7 @@ const router = createBrowserRouter([
         path: "settings",
         element: (
           <Fragment>
+            <TopNavbar />
             <Navbar /> <Settings />{" "}
           </Fragment>
         )
