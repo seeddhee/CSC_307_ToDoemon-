@@ -255,3 +255,9 @@
 .round input:checked + label {
   opacity: 1;
 }
+
+.error-message p {
+  color: red;
+  padding-top: 5px;
+  margin-bottom: -20px;
+}
