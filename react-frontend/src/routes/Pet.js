@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Title from "../components/pages/Title";
 import PetDisplay from "../components/pages/PetDisplay";
@@ -21,6 +21,13 @@ function Pet() {
   const bg2 = require("../images/background-2.png");
   let backgrounds = [bg1, bg2];
 
+  const [displayedBackground, setDisplayedBackground] = useState(backgrounds[0]);
+
+  const [seed, setSeed] = useState(1);
+  const reset = () => {
+    setSeed(Math.random());
+  };
+
   function handleClickItems(event) {
     if (event.target.className === "equip-button") {
       event.target.innerText = "Equipped";
@@ -33,8 +40,11 @@ function Pet() {
 
   function handleClickBackgrounds(event) {
     if (event.target.className === "equip-button") {
+      setDisplayedBackground(event.target.value);
+      console.log(event.target);
       event.target.innerText = "Equipped";
       event.target.className = "equip-button-selected";
+      reset;
     } else {
       event.target.innerText = "Select";
       event.target.className = "equip-button";
@@ -46,7 +56,7 @@ function Pet() {
       <Title text="My Pet"></Title>
       <div className="pet-items">
         <div className="pet">
-          <PetDisplay background={bg2} image={pet} name="Jake" />
+          <PetDisplay background={displayedBackground} image={pet} name="Jake" />
         </div>
         <div className="items">
           <div className="items-top">
@@ -63,11 +73,7 @@ function Pet() {
           <PetPageTitle text="Environments" />
           <div className="background-list">
             {backgrounds.map((background) => (
-              <BackgroundOption
-                key={Math.random()}
-                image={background}
-                onClick={handleClickBackgrounds}
-              />
+              <BackgroundOption key={seed} image={background} onClick={handleClickBackgrounds} />
             ))}
           </div>
         </div>
