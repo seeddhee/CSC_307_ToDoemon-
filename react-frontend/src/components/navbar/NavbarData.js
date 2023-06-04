@@ -27,6 +27,7 @@ export const NavbarData = [
     title: "My Pet",
     path: "/pet",
     icons: <FaIcons.FaHeart />,
+    // icons: <FaIcons.FaBone />,
     cName: "nav-text"
   },
   {
