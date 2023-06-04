@@ -1,30 +1,25 @@
-// import React from "react";
-// import AdapterDateFns from "@mui/lab/AdapterDateFns";
-// import LocalizationProvider from "@mui/lab/LocalizationProvider";
-// import DatePicker from '@mui/lab/DatePicker';
+import * as React from "react";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 
-// export default function DateTimePickerValue(props) {
-//   const { name, label, value, onChange } = props;
+export default function DateTimePickerValue(props) {
+  const { name, label, value, onChange } = props;
 
-//   const convertToDefEventPara = (name, value) => ({
-//     target: {
-//       name,
-//       value
-//     }
-//   });
+  const convertToDefEventPara = (name, value) => ({
+    target: {
+      name,
+      value
+    }
+  });
 
-//   return (
-//     <LocalizationProvider dateAdapter={AdapterDateFns}>
-//       <DatePicker
-//         disableToolbar
-//         variant="inline"
-//         inputVariant="outlined"
-//         label={label}
-//         format="MMM/dd/yyyy"
-//         name={name}
-//         value={value}
-//         onChange={(date) => onChange(convertToDefEventPara(name, date))}
-//       />
-//     </LocalizationProvider>
-//   );
-// }
+  return (
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DateTimePicker
+        label={label}
+        value={value}
+        onChange={(date) => onChange(convertToDefEventPara(name, date))}
+      />
+    </LocalizationProvider>
+  );
+}

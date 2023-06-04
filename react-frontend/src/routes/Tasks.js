@@ -97,7 +97,7 @@ export default function Tasks() {
             }}
             onChange={handleSearch}
           />
-          <Controls.Button
+          <Controls.ContainedButton
             text="Add New"
             variant="outlined"
             startIcon={<AddIcon />}
@@ -135,7 +135,7 @@ export default function Tasks() {
         </TblContainer>
         <TblPagination />
       </Paper>
-      <Popup title="Employee Form" openPopup={openPopup} setOpenPopup={setOpenPopup}>
+      <Popup title="Task Form" openPopup={openPopup} setOpenPopup={setOpenPopup}>
         <TaskForm recordForEdit={recordForEdit} addOrEdit={addOrEdit} />
       </Popup>
     </>

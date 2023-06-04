@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { styled } from "@mui/system";
-import { Button as MuiButton } from "@mui/material";
+import Button from "@mui/material/Button";
 
 const useStyles = styled((theme) => ({
   root: {
@@ -11,19 +12,19 @@ const useStyles = styled((theme) => ({
   }
 }));
 
-export default function Button(props) {
+export default function ContainedButton(props) {
   const { text, size, color, variant, onClick, ...other } = props;
   const classes = useStyles();
 
   return (
-    <MuiButton
+    <Button
       variant={variant || "contained"}
       size={size || "large"}
-      color={color || "primary"}
+      color={"primary"}
       onClick={onClick}
       {...other}
       classes={{ root: classes.root, label: classes.label }}>
       {text}
-    </MuiButton>
+    </Button>
   );
 }

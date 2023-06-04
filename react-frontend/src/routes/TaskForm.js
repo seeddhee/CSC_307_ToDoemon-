@@ -1,26 +1,22 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect } from "react";
-import { Grid } from "@mui/material";
+import dayjs from "dayjs";
+import Stack from "@mui/material/Stack";
 import Controls from "../components/controls/Controls";
 import { useForm, Form } from "../components/tasks/useForm";
 import * as taskService from "../services/taskService";
 
-const genderItems = [
-  { id: "male", title: "Male" },
-  { id: "female", title: "Female" },
-  { id: "other", title: "Other" }
+const taskDifficulty = [
+  { id: "easy", title: "Easy" },
+  { id: "medium", title: "Medium" },
+  { id: "hard", title: "Hard" }
 ];
 
 const initialFValues = {
   id: 0,
-  fullName: "",
-  email: "",
-  mobile: "",
-  city: "",
-  gender: "male",
-  departmentId: "",
-  hireDate: new Date(),
-  isPermanent: false
+  taskDescription: "",
+  difficulty: "medium",
+  dueDate: dayjs(Date.now())
 };
 
 export default function TaskForm(props) {
@@ -28,7 +24,7 @@ export default function TaskForm(props) {
 
   const validate = (fieldValues = values) => {
     let temp = { ...errors };
-    if ("fullName" in fieldValues)
+    if ("taskDescription" in fieldValues)
       temp.fullName = fieldValues.fullName ? "" : "This field is required.";
     if ("email" in fieldValues)
       temp.email = /$^|.+@.+..+/.test(fieldValues.email) ? "" : "Email is not valid.";
@@ -65,70 +61,30 @@ export default function TaskForm(props) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Grid container>
-        <Grid item xs={6}>
-          <Controls.Input
-            name="fullName"
-            label="Full Name"
-            value={values.fullName}
-            onChange={handleInputChange}
-            error={errors.fullName}
-          />
-          <Controls.Input
-            label="Email"
-            name="email"
-            value={values.email}
-            onChange={handleInputChange}
-            error={errors.email}
-          />
-          <Controls.Input
-            label="Mobile"
-            name="mobile"
-            value={values.mobile}
-            onChange={handleInputChange}
-            error={errors.mobile}
-          />
-          <Controls.Input
-            label="City"
-            name="city"
-            value={values.city}
-            onChange={handleInputChange}
-          />
-        </Grid>
-        <Grid item xs={6}>
-          <Controls.RadioGroup
-            name="gender"
-            label="Gender"
-            value={values.gender}
-            onChange={handleInputChange}
-            items={genderItems}
-          />
-          <Controls.Select
-            name="departmentId"
-            label="Department"
-            value={values.departmentId}
-            onChange={handleInputChange}
-            options={taskService.getDepartmentCollection()}
-            error={errors.departmentId}
-          />
-          {/* <Controls.DateTimePickerValue
-            name="hireDate"
-            label="Hire Date"
-            value={values.hireDate}
-            onChange={handleInputChange}
-          /> */}
-          <Controls.Checkbox
-            name="isPermanent"
-            label="Permanent Employee"
-            value={values.isPermanent}
-            onChange={handleInputChange}
-          />
-          <div>
-            <Controls.Button type="submit" text="Submit" />
-            <Controls.Button text="Reset" color="default" onClick={resetForm} />
-          </div>
-        </Grid>
-      </Grid>
+      <Stack spacing={{ xs: 1, sm: 2 }} direction="column" useFlexGap flexWrap="wrap">
+        <Controls.Input
+          name="taskDesc"
+          label="Task Description"
+          value={values.fullName}
+          onChange={handleInputChange}
+          error={errors.fullName}
+        />
+        <Controls.DateTimePickerValue
+          name="date"
+          label="Date"
+          value={values.dueDate}
+          onChange={handleInputChange}
+        />
+        <Controls.RadioGroup
+          name="taskDifficulty"
+          label="Task Difficulty"
+          value={values.difficulty}
+          onChange={handleInputChange}
+          items={taskDifficulty}
+        />
+        <Controls.ContainedButton type="submit" text="Submit" />
+        <Controls.ContainedButton text="Reset" color="default" onClick={resetForm} />
+      </Stack>
     </Form>
   );
 }
