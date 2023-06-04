@@ -8,14 +8,17 @@ import Pet from "./routes/Pet";
 import Settings from "./routes/Settings";
 import LoginPage from "./login-pages/LoginPage";
 import Navbar from "./components/navbar/Navbar";
-// import SignUpPage from "./login-pages/SignUpPage";
-// import ForgotPasswordPage from "./login-pages/ForgotPasswordPage";
+import SignUpPage from "./login-pages/SignUpPage";
+import ForgotPasswordPage from "./login-pages/ForgotPasswordPage";
 
 function MyApp() {
   return (
     <>
       <Routes>
         <Route path="/" element={<LoginPage />} />
+        <Route path="signup" element={<SignUpPage />} />
+        <Route path="forgot" element={<ForgotPasswordPage />} />
+        <Route path="login" element={<LoginPage />} />
         <Route
           path="dashboard"
           element={
