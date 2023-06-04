@@ -74,6 +74,10 @@
   margin-top: -50%;
   width: 60%;
 }
+.pet-display .displayed-item {
+  max-height: 100px;
+  max-width: 100px;
+}
 
 #background-display {
   border: 13px solid #f4e285;

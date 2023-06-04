@@ -12,9 +12,14 @@ function Pet() {
   const pet = require("../images/pet-dino.png");
   const pointBalance = 500;
 
-  const cowboyHat = require("../images/item-cowboy-hat.png");
-  const mustache = require("../images/item-mustache.png");
-  const flower = require("../images/item-flower.png");
+  var cowboyHat = {
+    name: "cowboy-hat",
+    image: require("../images/item-cowboy-hat.png"),
+    opacity: 0
+  };
+  var mustache = { name: "mustache", image: require("../images/item-mustache.png"), opacity: 0 };
+  var flower = { name: "flower", image: require("../images/item-flower.png"), opacity: 0 };
+
   let items = [cowboyHat, mustache, flower];
 
   const bg1 = require("../images/background-1.png");
@@ -22,6 +27,7 @@ function Pet() {
   let backgrounds = [bg1, bg2];
 
   const [displayedBackground, setDisplayedBackground] = useState(backgrounds[0]);
+  const [displayedItems, setDisplayedItems] = useState(items);
 
   const [seed, setSeed] = useState(1);
   const reset = () => {
@@ -30,33 +36,57 @@ function Pet() {
 
   function handleClickItems(event) {
     if (event.target.className === "equip-button") {
+      displayedItems.filter((item) => {
+        if (item.name === event.target.id) {
+          item.opacity = 1;
+        }
+      });
+      console.log(displayedItems);
+      setDisplayedItems(displayedItems);
       event.target.innerText = "Equipped";
       event.target.className = "equip-button-selected";
     } else {
+      displayedItems.filter((item) => {
+        if (item.name === event.target.id) {
+          item.opacity = 0;
+        }
+      });
+      console.log(displayedItems);
+      setDisplayedItems(displayedItems);
       event.target.innerText = "Wear";
       event.target.className = "equip-button";
     }
+    reset;
   }
 
   function handleClickBackgrounds(event) {
     if (event.target.className === "equip-button") {
       setDisplayedBackground(event.target.value);
-      console.log(event.target);
       event.target.innerText = "Equipped";
       event.target.className = "equip-button-selected";
-      reset;
     } else {
       event.target.innerText = "Select";
       event.target.className = "equip-button";
     }
+    reset;
   }
+
+  useEffect(() => {
+    setDisplayedItems(displayedItems);
+  });
 
   return (
     <div className="pet-page">
       <Title text="My Pet"></Title>
       <div className="pet-items">
         <div className="pet">
-          <PetDisplay background={displayedBackground} image={pet} name="Jake" />
+          <PetDisplay
+            key={seed}
+            background={displayedBackground}
+            image={pet}
+            name="Jake"
+            items={displayedItems}
+          />
         </div>
         <div className="items">
           <div className="items-top">
@@ -67,7 +97,13 @@ function Pet() {
           <PetPageTitle text="Accessories" />
           <div className="item-list">
             {items.map((item) => (
-              <ItemOption key={Math.random()} image={item} onClick={handleClickItems} text="Wear" />
+              <ItemOption
+                id={item.name}
+                key={Math.random()}
+                image={item.image}
+                onClick={handleClickItems}
+                text="Wear"
+              />
             ))}
           </div>
           <PetPageTitle text="Environments" />
