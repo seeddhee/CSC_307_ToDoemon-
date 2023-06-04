@@ -62,6 +62,8 @@
   width: 70%;
   display: flex;
   flex-direction: column;
+  position: relative;
+  float: left;
 }
 
 .pet-display label {
@@ -75,8 +77,8 @@
   width: 60%;
 }
 .pet-display .displayed-item {
-  max-height: 100px;
-  max-width: 100px;
+  max-height: 80px;
+  max-width: 80px;
 }
 
 #background-display {
@@ -173,4 +175,26 @@
 .background-option .equip-button-selected {
   margin-top: 10px;
   width: 90%;
+}
+.items-wrapper {
+  position: relative;
+  float: left;
+}
+
+#cowboy-hat {
+  transform: scaleX(-1);
+  position: relative;
+  top: -163px;
+  left: 160px;
+}
+
+#mustache {
+  position: relative;
+  top: -115px;
+  left: 110px;
+}
+#flower {
+  position: relative;
+  top: -250px;
+  left: 0px;
 }

@@ -14,11 +14,10 @@ function Pet() {
 
   var cowboyHat = {
     name: "cowboy-hat",
-    image: require("../images/item-cowboy-hat.png"),
-    opacity: 0
+    image: require("../images/item-cowboy-hat.png")
   };
-  var mustache = { name: "mustache", image: require("../images/item-mustache.png"), opacity: 0 };
-  var flower = { name: "flower", image: require("../images/item-flower.png"), opacity: 0 };
+  var mustache = { name: "mustache", image: require("../images/item-mustache.png") };
+  var flower = { name: "flower", image: require("../images/item-flower.png") };
 
   let items = [cowboyHat, mustache, flower];
 
@@ -27,53 +26,27 @@ function Pet() {
   let backgrounds = [bg1, bg2];
 
   const [displayedBackground, setDisplayedBackground] = useState(backgrounds[0]);
-  const [displayedItems, setDisplayedItems] = useState(items);
-
-  const [seed, setSeed] = useState(1);
-  const reset = () => {
-    setSeed(Math.random());
-  };
+  const [displayedItems, setDisplayedItems] = useState([]);
 
   function handleClickItems(event) {
+    console.log(event.target);
     if (event.target.className === "equip-button") {
-      displayedItems.filter((item) => {
-        if (item.name === event.target.id) {
-          item.opacity = 1;
+      items.forEach((item) => {
+        if (item.name == event.target.value) {
+          setDisplayedItems([...displayedItems, item.name]);
         }
       });
-      console.log(displayedItems);
-      setDisplayedItems(displayedItems);
-      event.target.innerText = "Equipped";
-      event.target.className = "equip-button-selected";
     } else {
-      displayedItems.filter((item) => {
-        if (item.name === event.target.id) {
-          item.opacity = 0;
-        }
-      });
-      console.log(displayedItems);
-      setDisplayedItems(displayedItems);
-      event.target.innerText = "Wear";
-      event.target.className = "equip-button";
+      let newItems = displayedItems.filter((item) => item != event.target.value);
+      setDisplayedItems(newItems);
     }
-    reset;
   }
 
   function handleClickBackgrounds(event) {
     if (event.target.className === "equip-button") {
       setDisplayedBackground(event.target.value);
-      event.target.innerText = "Equipped";
-      event.target.className = "equip-button-selected";
-    } else {
-      event.target.innerText = "Select";
-      event.target.className = "equip-button";
     }
-    reset;
   }
-
-  useEffect(() => {
-    setDisplayedItems(displayedItems);
-  });
 
   return (
     <div className="pet-page">
@@ -81,11 +54,12 @@ function Pet() {
       <div className="pet-items">
         <div className="pet">
           <PetDisplay
-            key={seed}
+            key={Math.random()}
             background={displayedBackground}
             image={pet}
             name="Jake"
-            items={displayedItems}
+            items={items}
+            visible={displayedItems}
           />
         </div>
         <div className="items">
@@ -102,14 +76,19 @@ function Pet() {
                 key={Math.random()}
                 image={item.image}
                 onClick={handleClickItems}
-                text="Wear"
+                visible={displayedItems}
               />
             ))}
           </div>
           <PetPageTitle text="Environments" />
           <div className="background-list">
             {backgrounds.map((background) => (
-              <BackgroundOption key={seed} image={background} onClick={handleClickBackgrounds} />
+              <BackgroundOption
+                key={Math.random()}
+                image={background}
+                onClick={handleClickBackgrounds}
+                displayed={displayedBackground}
+              />
             ))}
           </div>
         </div>
