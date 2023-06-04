@@ -1,0 +1,257 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css");
+/*Sign up page*/
+.login-style {
+  min-height: 70svh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.login-style .left-div {
+  /* align-self: center; */
+  margin-top: 13vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-style .right-div {
+  flex: 0.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Nunito", sans-serif;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
+.login-style .left-div h1 {
+  font-style: normal;
+  font-family: "Quicksand";
+  font-weight: 700;
+  font-size: 52px;
+  color: #fea259;
+}
+
+.login-style p {
+  font-weight: 400;
+  font-size: 20px;
+  color: #444b59;
+  margin-block: 0;
+}
+
+/* ErrorPage */
+.error-page {
+  flex: 0.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Nunito", sans-serif;
+}
+.error-page h2 {
+  font-family: "Overpass";
+  font-weight: 400;
+  font-size: 64px;
+  color: gray;
+  margin-block: 15px;
+}
+.error-page p {
+  padding-top: 30px;
+  text-align: center;
+  font-size: 24px;
+  color: gray;
+  margin-bottom: 0;
+}
+.error-page .link-button {
+  width: 100%;
+}
+
+.dino-img {
+  max-width: 265px;
+  height: auto;
+}
+
+@media only screen and (max-width: 650px) {
+  .login-style .right-div {
+    flex: 0.95;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .left-div h1 {
+    line-height: 0;
+  }
+  .dino-img {
+    display: none;
+  }
+}
+
+/* PageTitle */
+.page-title h2 {
+  font-family: "Overpass", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  color: #444b59;
+  margin: 15px 0 0 0;
+}
+
+.page-title p {
+  font-weight: 400;
+  font-size: 20px;
+  color: #444b59;
+  margin-block: 0;
+}
+
+.page-title a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #789ade;
+}
+
+/* MyInput */
+.my-input label {
+  font-weight: 600;
+  font-size: 28px;
+  color: #444b59;
+  padding-top: 30px;
+}
+
+.my-input {
+  display: flex;
+  flex-direction: column;
+}
+.my-input .password input {
+  width: 100%;
+}
+
+.my-input input {
+  max-width: 640px;
+  max-height: 70px;
+  background: #ffffff;
+  border: 2px solid #789ade;
+  border-radius: 80px;
+  padding: 20px 28px;
+  font-size: 22px;
+  box-sizing: border-box;
+}
+.my-input .error {
+  border: 2px solid red;
+}
+.my-input input[type="password"] {
+  font-family: Verdana;
+}
+::placeholder {
+  opacity: 60%;
+}
+.my-input input:focus {
+  border: 3px solid #789ade;
+  outline: none;
+}
+/* Password Eye */
+.my-input i {
+  margin-left: -5vw;
+  cursor: pointer;
+  color: #9eb0ea;
+  font-size: 20px;
+}
+
+/* LinkButton */
+.link-button {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+
+  max-width: 640px;
+  min-height: 70px;
+
+  background: #e6774a;
+  border: none;
+  border-radius: 80px;
+
+  box-shadow: 4px 8px 12px rgba(78, 99, 141, 0.06), inset 0px 4px 12px rgba(200, 211, 249, 0.6);
+
+  font-weight: 800;
+  font-size: 28px;
+  color: white;
+  text-decoration: none;
+}
+.link-button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 620px;
+  padding-top: 4svh;
+  font-size: 18px;
+}
+.remember-forgot a {
+  text-decoration: none;
+  color: #789ade;
+}
+
+/* Remember Me Label */
+.remember {
+  display: flex;
+}
+.remember label {
+  align-self: center;
+  color: #444b59;
+  margin-left: -0.5em;
+}
+
+/* Remember Me Button */
+.round {
+  display: flex;
+}
+
+.round input {
+  width: 3em;
+  height: 3em;
+  background-color: white;
+
+  border: 2px solid #9eb0ea;
+  border-radius: 50%;
+
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+
+  font: inherit;
+  margin: 0;
+  cursor: pointer;
+}
+
+.round input:checked {
+  border: 3px solid #9eb0ea;
+}
+
+.round label {
+  display: flex;
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+  font: inherit;
+  padding-left: 0;
+  left: -2.25em;
+  background-color: #9eb0ea;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 0;
+  opacity: 0;
+}
+
+.round input:checked + label {
+  opacity: 1;
+}
