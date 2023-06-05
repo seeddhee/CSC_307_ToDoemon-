@@ -32,6 +32,7 @@ function Shop() {
       <HAT hat={hat} />
       <CS cs={cs} />
       <BRACE bracelet={bracelet} />
+      <h1>Virtual Shop</h1>
     </div>
   );
 }

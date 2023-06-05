@@ -45,7 +45,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  margin-bottom: 120px;
+  margin-bottom: 60px;
   margin-right: 700px;
 }
 
@@ -63,6 +63,16 @@
   right: 0;
   margin-bottom: 40px;
   margin-right: 1000px;
+}
+
+.shop h1 {
+  font-family: "Overpass";
+  font-weight: 400;
+  font-size: 64px;
+  color: gray;
+  margin-block: 122px;
+  margin-bottom: 900px;
+  margin-right: -80px;
 }
 
 .shop .bracelet {
