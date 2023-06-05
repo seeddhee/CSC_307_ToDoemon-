@@ -26,11 +26,10 @@
 }
 
 .title {
-  font-family: "Inter";
+  font-family: "Overlock", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 40px;
-  line-height: 58px;
 
   margin-block: 0;
 
