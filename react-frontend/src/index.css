@@ -66,7 +66,12 @@ span {
   border-radius: 4px;
 }
 
-.nav-text a:hover {
+.nav-text a:hover{
+  background-color: #ffffff;
+  color: #E6774A;
+}
+
+.activeTab a {
   background-color: #ffffff;
   color: #E6774A;
 }

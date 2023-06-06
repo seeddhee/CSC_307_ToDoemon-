@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Routes, Route } from "react-router-dom";
 import React, { Fragment } from "react";
 import ErrorPage from "./login-pages/ErrorPage";
