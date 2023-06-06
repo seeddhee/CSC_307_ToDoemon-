@@ -1,13 +1,13 @@
-.calendar{
+.dashboard{
 	display: flex;
-	flex: 2 1 auto;
-	flex-direction: column;
+	flex: 2;
 	padding-top: 30px;
+	height: 100vh;
+	font-size: 3rem;
 	color: #000000;
 }
 
-.calendar title{
-	width: min-content;
+.dashboard title{
 	font-family: "Overlock", sans-serif;
 	font-style: normal;
 	font-weight: 700;

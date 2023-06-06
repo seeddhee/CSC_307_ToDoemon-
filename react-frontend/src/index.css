@@ -10,11 +10,12 @@
 /*Main wrapper holding all items*/
 .container{
   display: flex;
+  height: 100%;
+  min-height: 100%;
   gap: 64px;
 }
 
 /*Shell Pages - base styles*/
-.dashboard,
 .shop,
 .tasks {
   display: flex;
@@ -30,13 +31,13 @@
 /* Navbar CSS */
 .nav-menu {
   display: flex;
-  height: 100vh;
   width: 10%;
   min-width: 300px;
   top: 80px;
   left: 0;
   background: #5B8E7D;;
   padding-top: 60px;
+  align-items: stretch;
 }
 
 span {
