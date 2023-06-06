@@ -2,6 +2,7 @@
 import React from "react";
 
 function Dashboard() {
+  document.title = "Taskemon | Dashboard";
   return (
     <div className="dashboard">
       <h1>Dashboard</h1>

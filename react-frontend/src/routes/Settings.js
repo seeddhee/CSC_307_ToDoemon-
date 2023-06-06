@@ -7,6 +7,7 @@ import "../style/settings-style.css";
 
 function Settings() {
   const [status, setStatus] = useState(true);
+  document.title = "Taskemon | Settings";
 
   function handleEdit() {
     setStatus(false);
