@@ -12,6 +12,7 @@ import Navbar from "./components/navbar/Navbar";
 import SignUpPage from "./login-pages/SignUpPage";
 import ForgotPasswordPage from "./login-pages/ForgotPasswordPage";
 import Topnav from "./components/navbar/TopNavbar";
+import { alertObj } from "./components/navbar/NavbarData";
 
 function MyApp() {
   return (
@@ -27,7 +28,7 @@ function MyApp() {
             <Fragment>
               <Topnav />
               <div className="container">
-                <Navbar /> <Dashboard />{" "}
+                <Navbar alertObj={alertObj} /> <Dashboard />{" "}
               </div>
             </Fragment>
           }
@@ -38,7 +39,7 @@ function MyApp() {
             <Fragment>
               <Topnav />
               <div className="container">
-                <Navbar /> <Shop />{" "}
+                <Navbar alertObj={alertObj} /> <Shop />{" "}
               </div>
             </Fragment>
           }
@@ -49,7 +50,7 @@ function MyApp() {
             <Fragment>
               <Topnav />
               <div className="container">
-                <Navbar /> <Tasks />{" "}
+                <Navbar alertObj={alertObj} /> <Tasks />{" "}
               </div>
             </Fragment>
           }
@@ -60,7 +61,7 @@ function MyApp() {
             <Fragment>
               <Topnav />
               <div className="container">
-                <Navbar /> <Pet />{" "}
+                <Navbar alertObj={alertObj} /> <Pet />{" "}
               </div>
             </Fragment>
           }
@@ -71,7 +72,7 @@ function MyApp() {
             <Fragment>
               <Topnav />
               <div className="container">
-                <Navbar /> <Settings />{" "}
+                <Navbar alertObj={alertObj} /> <Settings />{" "}
               </div>
             </Fragment>
           }

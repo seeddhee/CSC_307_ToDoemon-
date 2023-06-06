@@ -64,6 +64,10 @@ span {
   align-items: center;
   padding: 0 16px;
   border-radius: 4px;
+  justify-content: space-between;
+}
+.nav-item{
+  justify-content: flex-start;
 }
 
 .nav-text a:hover{
@@ -79,6 +83,43 @@ span {
 .nav-menu-items {
   width: 100%;
 }
+
+.alert-low{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  color: #000000;
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  background-color: #B1E5FC;
+}
+.alert-med{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  color: #000000;
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  background-color: #F4E285;
+  ;
+}
+.alert-high{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  color: #000000;
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  background-color: #FB9B9B;
+  ;
+}
+
 
 
 /*Top Navagation*/
