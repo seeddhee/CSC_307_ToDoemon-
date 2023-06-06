@@ -14,9 +14,9 @@ span {
 
 
 /*Main wrapper holding all items*/
-.wrapper-body{
+.container{
   display: flex;
-  flex-flow: row;
+  gap: 64px;
 }
 
 /*Shell Pages - base styles*/
@@ -24,10 +24,12 @@ span {
 .shop,
 .tasks {
   display: flex;
+  flex: 2;
   height: 100vh;
   font-size: 3rem;
   color: #000000;
   align-items: center;
+  gap: 16px;
   justify-content: center;
 }
 

@@ -1,21 +1,14 @@
 .pet-page {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
+  display: flex;
+  flex: 2;
   font-family: "Overlock", sans-serif;
   font-style: normal;
   font-weight: 700;
   letter-spacing: 0.1em;
   line-height: 1.5;
-
   /* flex: 0.8; */
   padding-top: 30px;
-  padding-left: 250px;
-
-  display: flex;
   flex-direction: column;
-
   height: 100vh;
 }
 

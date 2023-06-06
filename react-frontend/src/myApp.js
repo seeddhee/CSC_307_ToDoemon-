@@ -10,6 +10,7 @@ import LoginPage from "./login-pages/LoginPage";
 import Navbar from "./components/navbar/Navbar";
 import SignUpPage from "./login-pages/SignUpPage";
 import ForgotPasswordPage from "./login-pages/ForgotPasswordPage";
+import Topnav from "./components/navbar/TopNavbar";
 
 function MyApp() {
   return (
@@ -23,7 +24,10 @@ function MyApp() {
           path="dashboard"
           element={
             <Fragment>
-              <Navbar /> <Dashboard />{" "}
+              <Topnav />
+              <div className="container">
+                <Navbar /> <Dashboard />{" "}
+              </div>
             </Fragment>
           }
         />
@@ -31,7 +35,10 @@ function MyApp() {
           path="shop"
           element={
             <Fragment>
-              <Navbar /> <Shop />{" "}
+              <Topnav />
+              <div className="container">
+                <Navbar /> <Shop />{" "}
+              </div>
             </Fragment>
           }
         />
@@ -39,7 +46,10 @@ function MyApp() {
           path="tasks"
           element={
             <Fragment>
-              <Navbar /> <Tasks />{" "}
+              <Topnav />
+              <div className="container">
+                <Navbar /> <Tasks />{" "}
+              </div>
             </Fragment>
           }
         />
@@ -47,7 +57,10 @@ function MyApp() {
           path="pet"
           element={
             <Fragment>
-              <Navbar /> <Pet />{" "}
+              <Topnav />
+              <div className="container">
+                <Navbar /> <Pet />{" "}
+              </div>
             </Fragment>
           }
         />
@@ -55,7 +68,10 @@ function MyApp() {
           path="settings"
           element={
             <Fragment>
-              <Navbar /> <Settings />{" "}
+              <Topnav />
+              <div className="container">
+                <Navbar /> <Settings />{" "}
+              </div>
             </Fragment>
           }
         />
