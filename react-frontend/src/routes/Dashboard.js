@@ -4,10 +4,10 @@ import PetDisplay from "../components/pages/PetDisplay";
 import "../style/pet-page-style.css";
 
 function Dashboard(props) {
+  document.title = "Taskemon | Dashboard";
   let petName = props.user.pet.name;
   let petImage = require("../images/" + props.user.pet.image);
   let background = require("../images/" + props.user.pet.backgrounds[0]);
-
   return (
     <div className="pet-page">
       <div className="pet-items">

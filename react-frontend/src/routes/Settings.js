@@ -7,6 +7,7 @@ import "../style/settings-style.css";
 
 function Settings(props) {
   const [status, setStatus] = useState(true);
+  document.title = "Taskemon | Settings";
 
   const [user, setUser] = useState({
     Username: props.user.username,

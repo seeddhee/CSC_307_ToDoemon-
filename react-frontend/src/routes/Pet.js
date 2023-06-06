@@ -15,6 +15,7 @@ function Pet(props) {
   let petImage = require("../images/" + user.pet.image);
   let petName = user.pet.name;
   const pointBalance = 500;
+  document.title = "Taskemon | My Pet";
 
   let items = [];
   user.pet.items.forEach((item) =>
