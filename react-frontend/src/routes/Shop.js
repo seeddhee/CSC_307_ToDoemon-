@@ -12,6 +12,15 @@ import BRACE from "../components/shop/bracelet.js";
 import "../style/petstore-style.css";
 
 function Shop() {
+  const cool_dino = require("../images/cool_dino.png");
+  const textbox = require("../images/textbox.png");
+  const txt = require("../images/text.png");
+  const rectangle = require("../images/rectangle.png");
+  const pet = require("../images/pet.png");
+  const hat = require("../images/hat.png");
+  const mustache = require("../images/mustache.png");
+  const bracelet = require("../images/bracelet.png");
+  const cs = require("../images/comingsoon.png");
   return (
     <div className="shop">
       <Dino dino={cool_dino} />
