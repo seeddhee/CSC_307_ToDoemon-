@@ -8,22 +8,22 @@ import ItemOption from "../components/pages/ItemOption";
 import BackgroundOption from "../components/pages/BackgroundOption";
 import "../style/pet-page-style.css";
 
-function Pet() {
-  const pet = require("../images/pet-dino.png");
+function Pet(props) {
+  let user = props.user;
+
+  let petImage = require("../images/" + user.pet.image);
+  let petName = user.pet.name;
   const pointBalance = 500;
 
-  var cowboyHat = {
-    name: "cowboy-hat",
-    image: require("../images/item-cowboy-hat.png")
-  };
-  var mustache = { name: "mustache", image: require("../images/item-mustache.png") };
-  var flower = { name: "flower", image: require("../images/item-flower.png") };
+  let items = [];
+  user.pet.items.forEach((item) =>
+    items.push({ name: item, image: require("../images/item-" + item + ".png") })
+  );
 
-  let items = [cowboyHat, mustache, flower];
-
-  const bg1 = require("../images/background-1.png");
-  const bg2 = require("../images/background-2.png");
-  let backgrounds = [bg1, bg2];
+  let backgrounds = [];
+  user.pet.backgrounds.forEach((background) =>
+    backgrounds.push(require("../images/" + background))
+  );
 
   const [displayedBackground, setDisplayedBackground] = useState(backgrounds[0]);
   const [displayedItems, setDisplayedItems] = useState([]);
@@ -56,8 +56,8 @@ function Pet() {
           <PetDisplay
             key={Math.random()}
             background={displayedBackground}
-            image={pet}
-            name="Jake"
+            image={petImage}
+            name={petName}
             items={items}
             visible={displayedItems}
           />
