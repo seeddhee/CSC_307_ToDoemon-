@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import React, { Fragment } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import ErrorPage from "./login-pages/ErrorPage";
 import Dashboard from "./routes/Dashboard";
 import Shop from "./routes/Shop";
@@ -10,8 +10,45 @@ import LoginPage from "./login-pages/LoginPage";
 import Navbar from "./components/navbar/Navbar";
 import SignUpPage from "./login-pages/SignUpPage";
 import ForgotPasswordPage from "./login-pages/ForgotPasswordPage";
+import axios from "axios";
 
 function MyApp() {
+  const userId = "647ecaabc61aa491d93c9cf7";
+  const [user, setUser] = useState(getUserById(userId));
+
+  async function getUserById(id) {
+    try {
+      const response = await axios.get("http://localhost:8000/users/" + id);
+      return response.data.Users;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  }
+
+  async function updateUser(Username, Email) {
+    try {
+      const response = await axios.patch("http://localhost:8000/users/" + userId, {
+        username: Username,
+        email: Email
+      });
+      if (response.status === 200) {
+        getUserById(userId).then((result) => {
+          if (result) setUser(result);
+        });
+      }
+      return response;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  }
+  useEffect(() => {
+    getUserById(userId).then((result) => {
+      if (result) setUser(result);
+    });
+  }, []);
+
   return (
     <>
       <Routes>
@@ -23,7 +60,7 @@ function MyApp() {
           path="dashboard"
           element={
             <Fragment>
-              <Navbar /> <Dashboard />{" "}
+              <Navbar /> <Dashboard user={user} />{" "}
             </Fragment>
           }
         />
@@ -47,7 +84,7 @@ function MyApp() {
           path="pet"
           element={
             <Fragment>
-              <Navbar /> <Pet />{" "}
+              <Navbar /> <Pet user={user} />{" "}
             </Fragment>
           }
         />
@@ -55,7 +92,7 @@ function MyApp() {
           path="settings"
           element={
             <Fragment>
-              <Navbar /> <Settings />{" "}
+              <Navbar /> <Settings user={user} updateUser={updateUser} />{" "}
             </Fragment>
           }
         />

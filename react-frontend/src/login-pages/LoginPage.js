@@ -23,7 +23,7 @@ function LoginPage() {
     setUser({ "Username or Email": "", Password: "" });
   }
 
-  document.title = "Login";
+  document.title = "Taskemon | Login";
   const happy_dino = require("../images/happy_dino.png");
   return (
     <div className="login-style">

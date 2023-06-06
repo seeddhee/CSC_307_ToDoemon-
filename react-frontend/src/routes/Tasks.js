@@ -43,6 +43,7 @@ const headCells = [
 ];
 
 export default function Tasks() {
+  document.title = "Taskemon | Tasks";
   const [recordForEdit, setRecordForEdit] = useState(null);
   const [records, setRecords] = useState(taskService.getAllEmployees());
   const [filterFn, setFilterFn] = useState({

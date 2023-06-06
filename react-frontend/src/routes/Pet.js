@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import * as AiIcons from "react-icons/ai";
 import Title from "../components/pages/Title";
 import PetDisplay from "../components/pages/PetDisplay";
 import PetPageTitle from "../components/pages/PetPageTitle";
@@ -8,22 +9,23 @@ import ItemOption from "../components/pages/ItemOption";
 import BackgroundOption from "../components/pages/BackgroundOption";
 import "../style/pet-page-style.css";
 
-function Pet() {
-  const pet = require("../images/pet-dino.png");
+function Pet(props) {
+  let user = props.user;
+
+  let petImage = require("../images/" + user.pet.image);
+  let petName = user.pet.name;
   const pointBalance = 500;
+  document.title = "Taskemon | My Pet";
 
-  var cowboyHat = {
-    name: "cowboy-hat",
-    image: require("../images/item-cowboy-hat.png")
-  };
-  var mustache = { name: "mustache", image: require("../images/item-mustache.png") };
-  var flower = { name: "flower", image: require("../images/item-flower.png") };
+  let items = [];
+  user.pet.items.forEach((item) =>
+    items.push({ name: item, image: require("../images/item-" + item + ".png") })
+  );
 
-  let items = [cowboyHat, mustache, flower];
-
-  const bg1 = require("../images/background-1.png");
-  const bg2 = require("../images/background-2.png");
-  let backgrounds = [bg1, bg2];
+  let backgrounds = [];
+  user.pet.backgrounds.forEach((background) =>
+    backgrounds.push(require("../images/" + background))
+  );
 
   const [displayedBackground, setDisplayedBackground] = useState(backgrounds[0]);
   const [displayedItems, setDisplayedItems] = useState([]);
@@ -54,10 +56,9 @@ function Pet() {
       <div className="pet-items">
         <div className="pet">
           <PetDisplay
-            key={Math.random()}
             background={displayedBackground}
-            image={pet}
-            name="Jake"
+            image={petImage}
+            name={petName}
             items={items}
             visible={displayedItems}
           />
@@ -65,7 +66,10 @@ function Pet() {
         <div className="items">
           <div className="items-top">
             <h2>Your Points: {pointBalance}</h2>
-            <Link to="/shop">Go to shop</Link>
+            <div className="shop-link">
+              <Link to="/shop">Go to shop</Link>
+              <AiIcons.AiOutlineArrowRight />
+            </div>
           </div>
 
           <PetPageTitle text="Accessories" />
