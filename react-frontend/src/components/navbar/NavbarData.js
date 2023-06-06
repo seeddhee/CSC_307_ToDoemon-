@@ -7,13 +7,14 @@ import * as TbIcons from "react-icons/tb";
 //Notification Alert object with Hardcoded values to represent the categories/names used for the tabs and sub tabs in the nav menu.
 
 //key= category for the alert, value = number of alert.
-export const [alertObj, setAlertObj] = React.useState({
+export const alertObj = {
   dashboard: 0,
+  calendar: 6,
   virtualShop: 3,
   tasks: 6,
   myPet: 20,
   settings: 0
-});
+};
 
 //Once the backend data is imported the object will be merged with this list so that new categories populate in the nav bar with their corresponding alert number.
 export const NavbarData = [
@@ -22,6 +23,13 @@ export const NavbarData = [
     name: "dashboard",
     path: "/dashboard",
     icons: <AiIcons.AiOutlineDashboard />,
+    cName: "nav-text"
+  },
+  {
+    title: "Calendar",
+    name: "calendar",
+    path: "/calendar",
+    icons: <FiIcons.FiCalendar />,
     cName: "nav-text"
   },
   {

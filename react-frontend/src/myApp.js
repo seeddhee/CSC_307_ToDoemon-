@@ -12,9 +12,11 @@ import Navbar from "./components/navbar/Navbar";
 import SignUpPage from "./login-pages/SignUpPage";
 import ForgotPasswordPage from "./login-pages/ForgotPasswordPage";
 import Topnav from "./components/navbar/TopNavbar";
+import Calendar from "./routes/Calendar";
 import { alertObj } from "./components/navbar/NavbarData";
 
 function MyApp() {
+  const [alertObjState, setAlertObjectState] = React.useState(alertObj);
   return (
     <>
       <Routes>
@@ -28,7 +30,18 @@ function MyApp() {
             <Fragment>
               <Topnav />
               <div className="container">
-                <Navbar alertObj={alertObj} /> <Dashboard />{" "}
+                <Navbar alertObj={alertObjState} /> <Dashboard />{" "}
+              </div>
+            </Fragment>
+          }
+        />
+        <Route
+          path="calendar"
+          element={
+            <Fragment>
+              <Topnav />
+              <div className="container">
+                <Navbar alertObj={alertObjState} /> <Calendar />{" "}
               </div>
             </Fragment>
           }
@@ -39,7 +52,7 @@ function MyApp() {
             <Fragment>
               <Topnav />
               <div className="container">
-                <Navbar alertObj={alertObj} /> <Shop />{" "}
+                <Navbar alertObj={alertObjState} /> <Shop />{" "}
               </div>
             </Fragment>
           }
@@ -50,7 +63,7 @@ function MyApp() {
             <Fragment>
               <Topnav />
               <div className="container">
-                <Navbar alertObj={alertObj} /> <Tasks />{" "}
+                <Navbar alertObj={alertObjState} /> <Tasks />{" "}
               </div>
             </Fragment>
           }
@@ -61,7 +74,7 @@ function MyApp() {
             <Fragment>
               <Topnav />
               <div className="container">
-                <Navbar alertObj={alertObj} /> <Pet />{" "}
+                <Navbar alertObj={alertObjState} /> <Pet />{" "}
               </div>
             </Fragment>
           }
@@ -72,7 +85,7 @@ function MyApp() {
             <Fragment>
               <Topnav />
               <div className="container">
-                <Navbar alertObj={alertObj} /> <Settings />{" "}
+                <Navbar alertObj={alertObjState} /> <Settings />{" "}
               </div>
             </Fragment>
           }

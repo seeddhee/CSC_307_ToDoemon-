@@ -7,12 +7,6 @@
   padding: 0;
   font-family: "Lato", sans-serif;
 }
-
-span {
-  margin-left: 16px;
-}
-
-
 /*Main wrapper holding all items*/
 .container{
   display: flex;
@@ -43,6 +37,10 @@ span {
   left: 0;
   background: #5B8E7D;;
   padding-top: 60px;
+}
+
+span {
+  margin-left: 16px;
 }
 
 .nav-text {
