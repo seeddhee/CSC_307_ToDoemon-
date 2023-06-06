@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const userModel = require("./user");
 const dotenv = require("dotenv");
+const User = require("./user");
 mongoose.set("debug", true);
 dotenv.config();
 
@@ -45,6 +46,18 @@ async function getUserById(id) {
   }
 }
 
+async function patchUserUsername(id, newUser) {
+  let filter = { _id: id };
+  let update = newUser;
+  try {
+    const doc = await userModel.findOneAndUpdate(filter, update, { new: true });
+    return true;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
+}
+
 async function addUser(user) {
   try {
     const userToAdd = new userModel(user);
@@ -82,3 +95,4 @@ async function deleteUser(user) {
 exports.getUserById = getUserById;
 exports.addUser = addUser;
 exports.deleteUser = deleteUser;
+exports.patchUserUsername = patchUserUsername;

@@ -26,6 +26,23 @@ function MyApp() {
     }
   }
 
+  async function updateUser(Username, Email) {
+    try {
+      const response = await axios.patch("http://localhost:8000/users/" + userId, {
+        username: Username,
+        email: Email
+      });
+      if (response.status === 200) {
+        getUserById(userId).then((result) => {
+          if (result) setUser(result);
+        });
+      }
+      return response;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  }
   useEffect(() => {
     getUserById(userId).then((result) => {
       if (result) setUser(result);
@@ -43,7 +60,7 @@ function MyApp() {
           path="dashboard"
           element={
             <Fragment>
-              <Navbar /> <Dashboard />{" "}
+              <Navbar /> <Dashboard user={user} />{" "}
             </Fragment>
           }
         />
@@ -75,7 +92,7 @@ function MyApp() {
           path="settings"
           element={
             <Fragment>
-              <Navbar /> <Settings />{" "}
+              <Navbar /> <Settings user={user} updateUser={updateUser} />{" "}
             </Fragment>
           }
         />
