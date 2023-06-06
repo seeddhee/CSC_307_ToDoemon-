@@ -45,6 +45,15 @@
   font-weight: 700;
 }
 
+.shop-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shop-link svg {
+  font-size: 24px;
+}
+
 .pet-page .pet {
   flex: 0.4;
   display: flex;

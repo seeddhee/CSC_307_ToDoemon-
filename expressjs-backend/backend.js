@@ -50,6 +50,16 @@ app.delete("/users/:id", async (req, res) => {
   }
 });
 
+app.patch("/users/:id", async (req, res) => {
+  const id = req.params.id;
+  const updatedUser = await userServices.patchUserUsername(id, req.body);
+  if (!updatedUser) {
+    res.status(404).send("Resource not found.");
+  } else {
+    res.status(200).end();
+  }
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });

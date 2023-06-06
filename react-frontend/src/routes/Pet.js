@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import * as AiIcons from "react-icons/ai";
 import Title from "../components/pages/Title";
 import PetDisplay from "../components/pages/PetDisplay";
 import PetPageTitle from "../components/pages/PetPageTitle";
@@ -55,7 +56,6 @@ function Pet(props) {
       <div className="pet-items">
         <div className="pet">
           <PetDisplay
-            key={Math.random()}
             background={displayedBackground}
             image={petImage}
             name={petName}
@@ -66,7 +66,10 @@ function Pet(props) {
         <div className="items">
           <div className="items-top">
             <h2>Your Points: {pointBalance}</h2>
-            <Link to="/shop">Go to shop</Link>
+            <div className="shop-link">
+              <Link to="/shop">Go to shop</Link>
+              <AiIcons.AiOutlineArrowRight />
+            </div>
           </div>
 
           <PetPageTitle text="Accessories" />
