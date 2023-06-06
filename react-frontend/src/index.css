@@ -22,8 +22,7 @@ span {
 /*Shell Pages - base styles*/
 .dashboard,
 .shop,
-.tasks,
-.pet {
+.tasks {
   display: flex;
   height: 100vh;
   font-size: 3rem;

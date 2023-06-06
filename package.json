@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "prettier": "2.8.8"
+  },
+  "dependencies": {
+    "react-icons": "^4.9.0",
+    "react-router": "^6.11.2"
+  }
+}

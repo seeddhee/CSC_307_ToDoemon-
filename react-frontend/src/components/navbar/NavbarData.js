@@ -1,15 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import * as FaIcons from "react-icons/fa";
 import * as FiIcons from "react-icons/fi";
 import * as AiIcons from "react-icons/ai";
-import * as IoIcons from "react-icons/io";
 import * as TbIcons from "react-icons/tb";
 
 export const NavbarData = [
   {
     title: "Dashboard",
-    path: "/",
+    path: "/dashboard",
     icons: <AiIcons.AiOutlineDashboard />,
     cName: "nav-text"
   },
