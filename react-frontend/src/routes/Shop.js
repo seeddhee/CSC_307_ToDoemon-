@@ -21,18 +21,20 @@ function Shop() {
   const mustache = require("../images/mustache.png");
   const bracelet = require("../images/bracelet.png");
   const cs = require("../images/comingsoon.png");
+  const mascot = require("../images/storemascot.jpg");
   return (
     <div className="shop">
-      <Dino dino={cool_dino} />
-      <TB tb={textbox} />
-      <TX tx={txt} />
-      <REC rec={rectangle} />
+      <h1 className="title"> Virtual Shop </h1>
       <PET pet={pet} />
-      <MUSTACHE mustache={mustache} />
-      <HAT hat={hat} />
-      <CS cs={cs} />
-      <BRACE bracelet={bracelet} />
-      <h1>Virtual Shop</h1>
+      <div className="wrapper-items-mascot">
+        <div className="item-carousel">
+          <img className="store-item" src={mustache} alt="mustache" />
+          <img className="store-item" src={hat} alt="hat" />
+          <img className="store-item" src={bracelet} alt="bracelet" />
+          <img className="store-item" src={cs} alt="coming soon" />
+        </div>
+        <img className="mascot-img" src={mascot} alt="Store Mascot" />
+      </div>
     </div>
   );
 }
