@@ -1,0 +1,113 @@
+.shop {
+  display: flex;
+  height: 20vh;
+  top: 0;
+  align-items: flex-start;
+  padding: 30px;
+  justify-content: center;
+  font-size: 3rem;
+  color: #926565;
+}
+
+.shop .shopleft-div {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 5vh;
+  margin-right: 12vh;
+}
+
+.shop .tb {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 300px;
+  margin-right: 10px;
+}
+
+.shop .tx {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 360px;
+  margin-right: 90px;
+}
+
+.shop .rec {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 30px;
+  margin-right: 380px;
+}
+
+.shop .pet {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 60px;
+  margin-right: 700px;
+}
+
+.shop .hat {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 40px;
+  margin-right: 1250px;
+}
+
+.shop .mustache {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 40px;
+  margin-right: 1000px;
+}
+
+.shop h1 {
+  font-family: "Overpass";
+  font-weight: 400;
+  font-size: 64px;
+  color: gray;
+  margin-block: 122px;
+  margin-bottom: 900px;
+  margin-right: -80px;
+}
+
+.shop .bracelet {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 44px;
+  margin-right: 710px;
+}
+
+.shop .cs {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 48px;
+  margin-right: 470px;
+}
+
+/* .shop .ShopPage_Title {
+  align-self: flex-end;
+  margin-top: auto;
+  margin-bottom: 112vh;
+  margin-right: 22122vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+
+.shop .ShopRighttDiv {
+  align-self: flex-end;
+  margin-top: auto;
+  margin-bottom: 112vh;
+  margin-right: 22122vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+} */

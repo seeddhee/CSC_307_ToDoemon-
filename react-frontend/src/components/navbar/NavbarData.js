@@ -2,12 +2,12 @@
 import React from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-import * as IoIcons from "react-icons/io";
+// import * as IoIcons from "react-icons/io";
 
 export const NavbarData = [
   {
     title: "Dashboard",
-    path: "/",
+    path: "/dashboard",
     icons: <AiIcons.AiFillHome />,
     cName: "nav-text"
   },
@@ -20,25 +20,26 @@ export const NavbarData = [
   {
     title: "Tasks",
     path: "/tasks",
-    icons: <AiIcons.AiFillHome />,
+    icons: <FaIcons.FaPencilAlt />,
     cName: "nav-text"
   },
   {
     title: "My Pet",
     path: "/pet",
-    icons: <AiIcons.AiFillHome />,
+    icons: <FaIcons.FaHeart />,
+    // icons: <FaIcons.FaBone />,
     cName: "nav-text"
   },
   {
     title: "Settings",
     path: "/settings",
-    icons: <AiIcons.AiFillHome />,
+    icons: <AiIcons.AiOutlineSetting />,
     cName: "nav-text"
   },
   {
     title: "Sign Out",
     path: "/signout",
-    icons: <AiIcons.AiFillHome />,
+    icons: <AiIcons.AiOutlineArrowRight />,
     cName: "nav-text"
   }
 ];
