@@ -4,6 +4,7 @@ import LeftDiv from "../components/login/LeftDiv.js";
 import MyInput from "../components/login/MyInput.js";
 import LinkButton from "../components/login/LinkButton.js";
 import PageTitle from "../components/login/PageTitle.js";
+import ErrorMessage from "../components/login/ErrorMessage.js";
 import "../style/login-style.css";
 
 function SignUpPage() {
@@ -20,6 +21,8 @@ function SignUpPage() {
     Email: "",
     Password: ""
   });
+
+  const [error, setError] = useState("0");
 
   function handleChange(event) {
     const { id, value } = event.target;
@@ -39,6 +42,7 @@ function SignUpPage() {
     let b = validateUsername(user.Username);
     let c = validatePassword(user.Password, user["Confirm Password"]);
     if (a && b && c) {
+      setError("0");
       return true;
     }
     return false;
@@ -51,12 +55,14 @@ function SignUpPage() {
       return true;
     }
     setClasses((values) => ({ ...values, Email: "error" }));
+    setError("1");
     return false;
   }
 
   function validateUsername(username) {
     if (username === "") {
       setClasses((values) => ({ ...values, Username: "error" }));
+      setError("1");
       return false;
     }
     return true;
@@ -67,12 +73,14 @@ function SignUpPage() {
       return true;
     }
     setClasses((values) => ({ ...values, Password: "error" }));
+    setError("1");
     return false;
   }
 
   useEffect(() => {
     setUser(user);
     setClasses(classes);
+    setError(error);
   });
 
   const happy_dino = require("../images/happy_dino.png");
@@ -81,6 +89,7 @@ function SignUpPage() {
       <LeftDiv dino={happy_dino} />
       <div className="right-div">
         <PageTitle title="WELCOME!" subtext="Have an account? " link="Sign In" to="/login" />
+        <ErrorMessage text="Oops, something wasn't right" display={{ opacity: error }} />
         <MyInput
           name="Email"
           type="text"
