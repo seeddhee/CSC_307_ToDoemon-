@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
+import { styled } from "@mui/material/styles";
 import {
   Table,
   TableHead,
@@ -7,10 +9,15 @@ import {
   TablePagination,
   TableSortLabel
 } from "@mui/material";
-import { styled } from "@mui/system";
 
-const useStyles = styled((theme) => ({
-  table: {
+const PREFIX = "useTable";
+
+const classes = {
+  table: `${PREFIX}-table`
+};
+
+const Root = styled("a[orderBy]) {\n      return -1;\n    }\n    if (b[orderBy] ")(({ theme }) => ({
+  [`& .${classes.table}`]: {
     marginTop: theme.spacing(3),
     "& thead th": {
       fontWeight: "600",
@@ -28,8 +35,6 @@ const useStyles = styled((theme) => ({
 }));
 
 export default function useTable(records, headCells, filterFn) {
-  const classes = useStyles();
-
   const pages = [5, 10, 25];
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(pages[page]);

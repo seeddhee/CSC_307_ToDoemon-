@@ -1,9 +1,7 @@
 import React, { useState } from "react";
+import { styled } from "@mui/material/styles";
 import TaskForm from "./TaskForm";
-import PageHeader from "../components/tasks/PageHeader";
-import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 import { Paper, TableBody, TableRow, TableCell, Toolbar, InputAdornment } from "@mui/material";
-import { styled } from "@mui/system";
 import useTable from "../components/tasks/useTable";
 import * as taskService from "../services/taskService";
 import Controls from "../components/controls/Controls";
@@ -13,30 +11,38 @@ import Popup from "../components/tasks/Popup";
 import EditIcon from "@mui/icons-material/Edit";
 import CloseIcon from "@mui/icons-material/Close";
 
-const useStyles = styled((theme) => ({
-  pageContent: {
+const PREFIX = "Tasks";
+
+const classes = {
+  pageContent: `${PREFIX}-pageContent`,
+  searchInput: `${PREFIX}-searchInput`,
+  newButton: `${PREFIX}-newButton`
+};
+
+const Root = styled("div")(({ theme }) => ({
+  [`& .${classes.pageContent}`]: {
     margin: theme.spacing(5),
     padding: theme.spacing(3)
   },
-  searchInput: {
+
+  [`& .${classes.searchInput}`]: {
     width: "75%"
   },
-  newButton: {
+
+  [`& .${classes.newButton}`]: {
     position: "absolute",
     right: "10px"
   }
 }));
 
 const headCells = [
-  { id: "fullName", label: "Employee Name" },
-  { id: "email", label: "Email Address (Personal)" },
-  { id: "mobile", label: "Mobile Number" },
-  { id: "department", label: "Department" },
+  { id: "taskDescription", label: "Task Description" },
+  { id: "date", label: "Date" },
+  { id: "difficulty", label: "Difficulty" },
   { id: "actions", label: "Actions", disableSorting: true }
 ];
 
 export default function Tasks() {
-  const classes = useStyles();
   const [recordForEdit, setRecordForEdit] = useState(null);
   const [records, setRecords] = useState(taskService.getAllEmployees());
   const [filterFn, setFilterFn] = useState({
@@ -57,7 +63,7 @@ export default function Tasks() {
     setFilterFn({
       fn: (items) => {
         if (target.value == "") return items;
-        else return items.filter((x) => x.fullName.toLowerCase().includes(target.value));
+        else return items.filter((x) => x.taskDescription.toLowerCase().includes(target.value));
       }
     });
   };
@@ -77,16 +83,11 @@ export default function Tasks() {
   };
 
   return (
-    <>
-      <PageHeader
-        title="New Employee"
-        subTitle="Form design with validation"
-        icon={<PeopleOutlineIcon fontSize="large" />}
-      />
+    <Root className="task-page">
       <Paper className={classes.pageContent}>
         <Toolbar>
           <Controls.Input
-            label="Search Employees"
+            label="Search Tasks"
             className={classes.searchInput}
             InputProps={{
               startAdornment: (
@@ -113,10 +114,9 @@ export default function Tasks() {
           <TableBody>
             {recordsAfterPagingAndSorting().map((item) => (
               <TableRow key={item.id}>
-                <TableCell>{item.fullName}</TableCell>
-                <TableCell>{item.email}</TableCell>
-                <TableCell>{item.mobile}</TableCell>
-                <TableCell>{item.department}</TableCell>
+                <TableCell>{item.taskDescription}</TableCell>
+                <TableCell>{item.date}</TableCell>
+                <TableCell>{item.difficulty}</TableCell>
                 <TableCell>
                   <Controls.ActionButton
                     color="primary"
@@ -138,6 +138,6 @@ export default function Tasks() {
       <Popup title="Task Form" openPopup={openPopup} setOpenPopup={setOpenPopup}>
         <TaskForm recordForEdit={recordForEdit} addOrEdit={addOrEdit} />
       </Popup>
-    </>
+    </Root>
   );
 }

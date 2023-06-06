@@ -1,19 +1,29 @@
 import React from "react";
+import { styled } from "@mui/material/styles";
 import Button from "./ContainedButton";
-import { styled } from "@mui/system";
 
-const useStyles = styled((theme) => ({
-  root: {
+const PREFIX = "ActionButton";
+
+const classes = {
+  root: `${PREFIX}-root`,
+  secondary: `${PREFIX}-secondary`,
+  primary: `${PREFIX}-primary`
+};
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  [`& .${classes.root}`]: {
     minWidth: 0,
     margin: theme.spacing(0.5)
   },
-  secondary: {
+
+  [`& .${classes.secondary}`]: {
     backgroundColor: theme.palette.secondary.light,
     "& .MuiButton-label": {
       color: theme.palette.secondary.main
     }
   },
-  primary: {
+
+  [`& .${classes.primary}`]: {
     backgroundColor: theme.palette.primary.light,
     "& .MuiButton-label": {
       color: theme.palette.primary.main
@@ -23,11 +33,10 @@ const useStyles = styled((theme) => ({
 
 export default function ActionButton(props) {
   const { color, children, onClick } = props;
-  const classes = useStyles();
 
   return (
-    <Button className={`${classes.root} ${classes[color]}`} onClick={onClick}>
+    <StyledButton className={`${classes.root} ${color}`} onClick={onClick}>
       {children}
-    </Button>
+    </StyledButton>
   );
 }

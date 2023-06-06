@@ -1,6 +1,22 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import { styled } from "@mui/system";
+import { styled } from "@mui/material/styles";
+import { makeStyles } from "@mui/material";
+
+const PREFIX = "useForm";
+
+const classes = {
+  root: `${PREFIX}-root`
+};
+
+const Root = styled("form")(({ theme }) => ({
+  [`&.${classes.root}`]: {
+    "& .MuiFormControl-root": {
+      width: "80%",
+      margin: theme.spacing(1)
+    }
+  }
+}));
 
 export function useForm(initialFValues, validateOnChange = false, validate) {
   const [values, setValues] = useState(initialFValues);
@@ -30,21 +46,11 @@ export function useForm(initialFValues, validateOnChange = false, validate) {
   };
 }
 
-const useStyles = styled((theme) => ({
-  root: {
-    "& .MuiFormControl-root": {
-      width: "80%",
-      margin: theme.spacing(1)
-    }
-  }
-}));
-
 export function Form(props) {
-  const classes = useStyles();
   const { children, ...other } = props;
   return (
-    <form className={classes.root} autoComplete="off" {...other}>
+    <Root className={classes.root} autoComplete="off" {...other}>
       {props.children}
-    </form>
+    </Root>
   );
 }

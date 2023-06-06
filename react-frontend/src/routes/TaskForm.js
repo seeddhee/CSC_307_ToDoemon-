@@ -4,7 +4,6 @@ import dayjs from "dayjs";
 import Stack from "@mui/material/Stack";
 import Controls from "../components/controls/Controls";
 import { useForm, Form } from "../components/tasks/useForm";
-import * as taskService from "../services/taskService";
 
 const taskDifficulty = [
   { id: "easy", title: "Easy" },
@@ -16,7 +15,7 @@ const initialFValues = {
   id: 0,
   taskDescription: "",
   difficulty: "medium",
-  dueDate: dayjs(Date.now())
+  date: dayjs(Date.now())
 };
 
 export default function TaskForm(props) {
@@ -25,17 +24,7 @@ export default function TaskForm(props) {
   const validate = (fieldValues = values) => {
     let temp = { ...errors };
     if ("taskDescription" in fieldValues)
-      temp.fullName = fieldValues.fullName ? "" : "This field is required.";
-    if ("email" in fieldValues)
-      temp.email = /$^|.+@.+..+/.test(fieldValues.email) ? "" : "Email is not valid.";
-    if ("mobile" in fieldValues)
-      temp.mobile = fieldValues.mobile.length > 9 ? "" : "Minimum 10 numbers required.";
-    if ("departmentId" in fieldValues)
-      temp.departmentId = fieldValues.departmentId.length != 0 ? "" : "This field is required.";
-    setErrors({
-      ...temp
-    });
-
+      temp.taskDescription = fieldValues.taskDescription ? "" : "This field is required.";
     if (fieldValues == values) return Object.values(temp).every((x) => x == "");
   };
 
@@ -63,21 +52,21 @@ export default function TaskForm(props) {
     <Form onSubmit={handleSubmit}>
       <Stack spacing={{ xs: 1, sm: 2 }} direction="column" useFlexGap flexWrap="wrap">
         <Controls.Input
-          name="taskDesc"
+          name="taskDescription"
           label="Task Description"
-          value={values.fullName}
+          value={values.taskDescription}
           onChange={handleInputChange}
-          error={errors.fullName}
+          error={errors.taskDescription}
         />
         <Controls.DateTimePickerValue
           name="date"
           label="Date"
-          value={values.dueDate}
+          value={values.date}
           onChange={handleInputChange}
         />
         <Controls.RadioGroup
-          name="taskDifficulty"
-          label="Task Difficulty"
+          name="difficulty"
+          label="Difficulty"
           value={values.difficulty}
           onChange={handleInputChange}
           items={taskDifficulty}

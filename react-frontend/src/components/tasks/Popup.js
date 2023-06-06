@@ -1,26 +1,33 @@
 import React from "react";
+import { styled } from "@mui/material/styles";
 import { Dialog, DialogTitle, DialogContent, Typography } from "@mui/material";
-import { styled } from "@mui/system";
 import Controls from "../controls/Controls";
 import CloseIcon from "@mui/icons-material/Close";
 
-const useStyles = styled((theme) => ({
-  dialogWrapper: {
+const PREFIX = "Popup";
+
+const classes = {
+  dialogWrapper: `${PREFIX}-dialogWrapper`,
+  dialogTitle: `${PREFIX}-dialogTitle`
+};
+
+const StyledDialog = styled(Dialog)(({ theme }) => ({
+  [`& .${classes.dialogWrapper}`]: {
     padding: theme.spacing(2),
     position: "absolute",
     top: theme.spacing(5)
   },
-  dialogTitle: {
+
+  [`& .${classes.dialogTitle}`]: {
     paddingRight: "0px"
   }
 }));
 
 export default function Popup(props) {
   const { title, children, openPopup, setOpenPopup } = props;
-  const classes = useStyles();
 
   return (
-    <Dialog open={openPopup} maxWidth="md" classes={{ paper: classes.dialogWrapper }}>
+    <StyledDialog open={openPopup} maxWidth="md" classes={{ paper: classes.dialogWrapper }}>
       <DialogTitle className={classes.dialogTitle}>
         <div style={{ display: "flex" }}>
           <Typography variant="h6" component="div" style={{ flexGrow: 1 }}>
@@ -36,6 +43,6 @@ export default function Popup(props) {
         </div>
       </DialogTitle>
       <DialogContent dividers>{children}</DialogContent>
-    </Dialog>
+    </StyledDialog>
   );
 }
