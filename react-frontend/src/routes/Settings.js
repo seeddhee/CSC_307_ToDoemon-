@@ -6,6 +6,7 @@ import LinkButton from "../components/login/LinkButton.js";
 import "../style/settings-style.css";
 
 function Settings() {
+  document.title = "Taskemon | Settings";
   return (
     <div className="settings-page">
       <Title text="Edit profile" />

@@ -7,7 +7,7 @@ import PageTitle from "../components/login/PageTitle.js";
 import "../style/login-style.css";
 
 function SignUpPage() {
-  document.title = "Signup";
+  document.title = "Taskemon | Signup";
   const [user, setUser] = useState({
     Username: "",
     Email: "",

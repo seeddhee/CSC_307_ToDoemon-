@@ -2,6 +2,7 @@
 import React from "react";
 
 function Shop() {
+  document.title = "Taskemon | Shop";
   return (
     <div className="shop">
       <h1>Shop</h1>
