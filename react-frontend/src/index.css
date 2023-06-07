@@ -185,3 +185,9 @@ span {
   font-size: 28px;
   cursor: pointer;
 }
+
+.task-page {
+  margin-left: 250px;
+  margin-top: 75px;
+  margin-right: 25px;
+}
