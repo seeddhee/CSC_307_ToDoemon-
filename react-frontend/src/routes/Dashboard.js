@@ -9,6 +9,8 @@ function Dashboard(props) {
   let petImage = require("../images/" + props.user.pet.image);
   let background = require("../images/" + props.user.pet.backgrounds[0]);
   return (
+    // <div className="dashboard">
+    //   <h1 className="title">Dashboard</h1>
     <div className="pet-page">
       <div className="pet-items">
         <div className="pet">

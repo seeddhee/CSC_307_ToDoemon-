@@ -21,3 +21,13 @@ IDE Plugins that will be useful:
 
 Navagation
 npm install react-router react-icons
+
+Icon gallery
+https://react-icons.github.io/react-icons
+
+
+react calendar
+npm install --save \
+  @fullcalendar/core \
+  @fullcalendar/react \
+  @fullcalendar/daygrid
