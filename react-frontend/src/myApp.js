@@ -121,7 +121,7 @@ function MyApp() {
             <Fragment>
               <Topnav />
               <div className="container">
-                <Navbar alertObj={alertObjState} />  <Settings user={user} updateUser={updateUser} />{" "}
+                <Navbar alertObj={alertObjState} /> <Settings user={user} updateUser={updateUser} />{" "}
               </div>
             </Fragment>
           }
