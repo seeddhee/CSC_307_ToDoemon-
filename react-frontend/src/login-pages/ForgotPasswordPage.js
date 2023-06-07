@@ -6,7 +6,7 @@ import LinkButton from "../components/login/LinkButton";
 import PageTitle from "../components/login/PageTitle";
 
 function ForgotPasswordPage() {
-  document.title = "Forgot Password";
+  document.title = "Taskemon | Forgot Password";
   const winking_dino = require("../images/winking_dino.png");
   return (
     <div className="login-style">

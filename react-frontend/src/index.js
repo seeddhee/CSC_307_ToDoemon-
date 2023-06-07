@@ -16,12 +16,15 @@ import SignUpPage from "./login-pages/SignUpPage";
 import ForgotPasswordPage from "./login-pages/ForgotPasswordPage";
 import LoginPage from "./login-pages/LoginPage";
 import "./index.css";
+import MyApp from "./myApp";
 
-const AppLayout = () => (
-  <>
-    {/* <Navbar /> */}
-    <Outlet />
-  </>
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <MyApp />
+    </BrowserRouter>
+  </React.StrictMode>
 );
 
 const router = createBrowserRouter([

@@ -40,10 +40,7 @@ function Shop() {
 
   return (
     <div className="shop">
-      <Dino dino={cool_dino} />
-      <TB tb={textbox} />
-      <TX tx={txt} />
-      <REC rec={rectangle} />
+      <h1 className="title"> Virtual Shop </h1>
       <PET pet={pet} />
       <MUSTACHE mustache={mustache} />
       <HAT hat={hat} />

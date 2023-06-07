@@ -3,7 +3,7 @@ import "../style/login-style.css";
 import LinkButton from "../components/login/LinkButton";
 
 function ErrorPage() {
-  document.title = "404";
+  document.title = "Taskemon | 404";
   const ghost = require("../images/ghost_dino.png");
   return (
     <div className="login-style">
