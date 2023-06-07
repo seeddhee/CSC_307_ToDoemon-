@@ -1,22 +1,16 @@
 .pet-page {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
+  display: flex;
+  flex: 1;
   font-family: "Overlock", sans-serif;
   font-style: normal;
   font-weight: 700;
   letter-spacing: 0.1em;
   line-height: 1.5;
-
   /* flex: 0.8; */
   padding-top: 30px;
-  padding-left: 250px;
-
-  display: flex;
   flex-direction: column;
-
   height: 100vh;
+  margin-bottom: 100px;
 }
 
 .pet-page .pet-items {
@@ -57,21 +51,21 @@
 .pet-page .pet {
   flex: 0.4;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  /* flex-wrap: wrap; */
+  /* flex-direction: column; */
   justify-content: center;
   align-content: center;
 }
 
 .pet-page .items {
   flex: 0.4;
+  margin-left: 32px;
 }
 
 .pet-display {
-  width: 70%;
   display: flex;
   flex-direction: column;
-  position: relative;
+  position: relative; 
   float: left;
 }
 
@@ -166,6 +160,7 @@
 
   max-height: 35%;
   overflow-y: auto;
+
 }
 
 .background-option {
@@ -202,6 +197,7 @@
   top: -115px;
   left: 110px;
 }
+
 #flower {
   position: relative;
   top: -250px;

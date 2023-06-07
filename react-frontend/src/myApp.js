@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Routes, Route } from "react-router-dom";
 import React, { useState, useEffect, Fragment } from "react";
 import ErrorPage from "./login-pages/ErrorPage";
@@ -10,12 +11,15 @@ import LoginPage from "./login-pages/LoginPage";
 import Navbar from "./components/navbar/Navbar";
 import SignUpPage from "./login-pages/SignUpPage";
 import ForgotPasswordPage from "./login-pages/ForgotPasswordPage";
+import Topnav from "./components/navbar/TopNavbar";
+import Calendar from "./routes/Calendar";
+import { alertObj } from "./components/navbar/NavbarData";
 import axios from "axios";
 
 function MyApp() {
   const userId = "647ecaabc61aa491d93c9cf7";
   const [user, setUser] = useState(getUserById(userId));
-
+  const [alertObjState, setAlertObjectState] = React.useState(alertObj);
   async function getUserById(id) {
     try {
       const response = await axios.get("http://localhost:8000/users/" + id);
@@ -60,7 +64,21 @@ function MyApp() {
           path="dashboard"
           element={
             <Fragment>
-              <Navbar /> <Dashboard user={user} />{" "}
+              <Topnav />
+              <div className="container">
+                <Navbar alertObj={alertObjState} /> <Dashboard user={user} />{" "}
+              </div>
+            </Fragment>
+          }
+        />
+        <Route
+          path="calendar"
+          element={
+            <Fragment>
+              <Topnav />
+              <div className="container">
+                <Navbar alertObj={alertObjState} /> <Calendar />{" "}
+              </div>
             </Fragment>
           }
         />
@@ -68,7 +86,10 @@ function MyApp() {
           path="shop"
           element={
             <Fragment>
-              <Navbar /> <Shop />{" "}
+              <Topnav />
+              <div className="container">
+                <Navbar alertObj={alertObjState} /> <Shop />{" "}
+              </div>
             </Fragment>
           }
         />
@@ -76,7 +97,10 @@ function MyApp() {
           path="tasks"
           element={
             <Fragment>
-              <Navbar /> <Tasks />{" "}
+              <Topnav />
+              <div className="container">
+                <Navbar alertObj={alertObjState} /> <Tasks />{" "}
+              </div>
             </Fragment>
           }
         />
@@ -84,7 +108,10 @@ function MyApp() {
           path="pet"
           element={
             <Fragment>
-              <Navbar /> <Pet user={user} />{" "}
+              <Topnav />
+              <div className="container">
+                <Navbar alertObj={alertObjState} /> <Pet user={user} />{" "}
+              </div>
             </Fragment>
           }
         />
@@ -92,7 +119,10 @@ function MyApp() {
           path="settings"
           element={
             <Fragment>
-              <Navbar /> <Settings user={user} updateUser={updateUser} />{" "}
+              <Topnav />
+              <div className="container">
+                <Navbar alertObj={alertObjState} />  <Settings user={user} updateUser={updateUser} />{" "}
+              </div>
             </Fragment>
           }
         />
