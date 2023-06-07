@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { Routes, Route } from "react-router-dom";
-import React, { Fragment } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import ErrorPage from "./login-pages/ErrorPage";
 import Dashboard from "./routes/Dashboard";
 import Shop from "./routes/Shop";
@@ -14,9 +14,45 @@ import ForgotPasswordPage from "./login-pages/ForgotPasswordPage";
 import Topnav from "./components/navbar/TopNavbar";
 import Calendar from "./routes/Calendar";
 import { alertObj } from "./components/navbar/NavbarData";
+import axios from "axios";
 
 function MyApp() {
+  const userId = "647ecaabc61aa491d93c9cf7";
+  const [user, setUser] = useState(getUserById(userId));
   const [alertObjState, setAlertObjectState] = React.useState(alertObj);
+  async function getUserById(id) {
+    try {
+      const response = await axios.get("http://localhost:8000/users/" + id);
+      return response.data.Users;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  }
+
+  async function updateUser(Username, Email) {
+    try {
+      const response = await axios.patch("http://localhost:8000/users/" + userId, {
+        username: Username,
+        email: Email
+      });
+      if (response.status === 200) {
+        getUserById(userId).then((result) => {
+          if (result) setUser(result);
+        });
+      }
+      return response;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  }
+  useEffect(() => {
+    getUserById(userId).then((result) => {
+      if (result) setUser(result);
+    });
+  }, []);
+
   return (
     <>
       <Routes>
@@ -30,7 +66,7 @@ function MyApp() {
             <Fragment>
               <Topnav />
               <div className="container">
-                <Navbar alertObj={alertObjState} /> <Dashboard />{" "}
+                <Navbar alertObj={alertObjState} /> <Dashboard user={user} />{" "}
               </div>
             </Fragment>
           }
@@ -74,7 +110,7 @@ function MyApp() {
             <Fragment>
               <Topnav />
               <div className="container">
-                <Navbar alertObj={alertObjState} /> <Pet />{" "}
+                <Navbar alertObj={alertObjState} /> <Pet user={user} />{" "}
               </div>
             </Fragment>
           }
@@ -85,7 +121,7 @@ function MyApp() {
             <Fragment>
               <Topnav />
               <div className="container">
-                <Navbar alertObj={alertObjState} /> <Settings />{" "}
+                <Navbar alertObj={alertObjState} />  <Settings user={user} updateUser={updateUser} />{" "}
               </div>
             </Fragment>
           }

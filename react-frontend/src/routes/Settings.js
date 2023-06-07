@@ -5,18 +5,40 @@ import MyInput from "../components/pages/MyInputSettings.js";
 import LinkButton from "../components/pages/LinkButtonSettings.js";
 import "../style/settings-style.css";
 
-function Settings() {
+function Settings(props) {
   const [status, setStatus] = useState(true);
+  document.title = "Taskemon | Settings";
+
+  const [user, setUser] = useState({
+    Username: props.user.username,
+    Email: props.user.email
+  });
+
+  function handleChange(event) {
+    const { id, value } = event.target;
+    setUser((values) => ({ ...values, [id]: value }));
+  }
 
   function handleEdit() {
     setStatus(false);
   }
+
   function handleCancel() {
+    setUser({
+      Username: props.user.username,
+      Email: props.user.email
+    });
     setStatus(true);
   }
+
   function handleSave() {
+    let response = props.updateUser(user.Username, user.Email);
+    if (response === 200) {
+      setUser(user);
+    }
     setStatus(true);
   }
+
   return (
     <div className="settings-page">
       <Title text="Edit profile" />
@@ -26,14 +48,16 @@ function Settings() {
           type="text"
           placeholder="productivedino@gmail.com"
           status={status}
-          value="Productive_Dino@gmail.com"
+          value={user.Email}
+          onChange={handleChange}
         />
         <MyInput
           name="Username"
           type="text"
           placeholder="productivedino"
           status={status}
-          value="Productive_Dino"
+          value={user.Username}
+          onChange={handleChange}
         />
       </div>
       <div className="settings-buttons">

@@ -8,7 +8,7 @@ import ErrorMessage from "../components/login/ErrorMessage.js";
 import "../style/login-style.css";
 
 function SignUpPage() {
-  document.title = "Signup";
+  document.title = "Taskemon | Sign Up";
   const [user, setUser] = useState({
     Username: "",
     Email: "",
