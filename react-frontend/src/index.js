@@ -7,6 +7,9 @@ import Shop from "./routes/Shop";
 import Tasks from "./routes/Tasks";
 import Pet from "./routes/Pet";
 import Settings from "./routes/Settings";
+import Purchase_hat from "./routes/Purchase_hat";
+import Purchase_must from "./routes/Purchase_must";
+import Purchase_brace from "./routes/Purchase_brace";
 import Navbar from "./components/navbar/Navbar";
 import ErrorPage from "./login-pages/ErrorPage";
 import SignUpPage from "./login-pages/SignUpPage";
@@ -94,6 +97,31 @@ const router = createBrowserRouter([
       {
         path: "*",
         element: <ErrorPage />
+      },
+      {
+        path: "/purchasehat",
+        element: (
+          <Fragment>
+            <Navbar /> <Purchase_hat />{" "}
+          </Fragment>
+        )
+      },
+      {
+        path: "/purchasemust",
+        element: (
+          <Fragment>
+            <Navbar /> <Purchase_must />{" "}
+          </Fragment>
+        )
+      },
+
+      {
+        path: "/purchasebrac",
+        element: (
+          <Fragment>
+            <Navbar /> <Purchase_brace />{" "}
+          </Fragment>
+        )
       }
     ]
   }

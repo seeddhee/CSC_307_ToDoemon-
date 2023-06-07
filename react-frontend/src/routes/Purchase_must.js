@@ -9,13 +9,10 @@ import MUSTACHE from "../components/shop/mustache.js";
 import HAT from "../components/shop/hat.js";
 import CS from "../components/shop/comingsoon.js";
 import BRACE from "../components/shop/bracelet.js";
-import "../style/petstore-style.css";
-import axios from "axios";
-import LinkButton1 from "../components/shop/linkbutton1.js";
-import LinkButton2 from "../components/shop/linkbutton2.js";
-import LinkButton3 from "../components/shop/linkbutton3.js";
+import "../style/purchase-style.css";
+import MUST_P from "../components/purchase/must_p.js";
 
-function Shop() {
+function Purchase() {
   const cool_dino = require("../images/cool_dino.png");
   const textbox = require("../images/textbox.png");
   const txt = require("../images/text.png");
@@ -25,18 +22,16 @@ function Shop() {
   const mustache = require("../images/mustache.png");
   const bracelet = require("../images/bracelet.png");
   const cs = require("../images/comingsoon.png");
+  const must_p = require("../images/mustache_p.png");
   const handleButtonClick = async () => {
     try {
-      await axios.get("http://localhost:8000/purchase"); // Replace with your backend URL and route
+      //await axios.get("http://localhost:8000/purchase"); // Replace with your backend URL and route
+      window.location.href = "/purchase";
       console.log("Button clicked!");
     } catch (error) {
       console.log(error);
     }
   };
-
-  function signIn() {
-    console.log("hi");
-  }
 
   return (
     <div className="shop">
@@ -49,12 +44,13 @@ function Shop() {
       <HAT hat={hat} />
       <CS cs={cs} />
       <BRACE bracelet={bracelet} />
-      <LinkButton1 className="button1" location="/purchasehat" text="Purchase1" onClick={signIn} />
-      <LinkButton2 className="button2" location="/purchasemust" text="Purchase2" onClick={signIn} />
-      <LinkButton3 className="button3" location="/purchasebrac" text="Purchase3" onClick={signIn} />
+      <input className="button1" type="button" value="Purchase" />
+      <input className="button2" type="button" value="Purchase" />
+      <input className="button3" type="button" value="Purchase" />
+      <MUST_P mustpurchased={must_p} />
       <h1>Virtual Shop</h1>
     </div>
   );
 }
 
-export default Shop;
+export default Purchase;
