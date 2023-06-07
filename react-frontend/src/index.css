@@ -8,7 +8,7 @@
   font-family: "Lato", sans-serif;
 }
 /*Main wrapper holding all items*/
-.container{
+.container {
   display: flex;
   height: 100%;
   min-height: 100%;
@@ -35,7 +35,7 @@
   min-width: 300px;
   top: 80px;
   left: 0;
-  background: #5B8E7D;;
+  background: #5b8e7d;
   padding-top: 60px;
   align-items: stretch;
 }
@@ -55,7 +55,7 @@ span {
 
 .nav-text a {
   text-decoration: none;
-  color: #FFFDFD;
+  color: #fffdfd;
   font-size: 18px;
   width: 95%;
   height: 100%;
@@ -65,25 +65,25 @@ span {
   border-radius: 4px;
   justify-content: space-between;
 }
-.nav-item{
+.nav-item {
   justify-content: flex-start;
 }
 
-.nav-text a:hover{
+.nav-text a:hover {
   background-color: #ffffff;
-  color: #E6774A;
+  color: #e6774a;
 }
 
 .activeTab a {
   background-color: #ffffff;
-  color: #E6774A;
+  color: #e6774a;
 }
 
 .nav-menu-items {
   width: 100%;
 }
 
-.alert-low{
+.alert-low {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,9 +92,9 @@ span {
   border-radius: 4px;
   width: 20px;
   height: 20px;
-  background-color: #B1E5FC;
+  background-color: #b1e5fc;
 }
-.alert-med{
+.alert-med {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,10 +103,9 @@ span {
   border-radius: 4px;
   width: 20px;
   height: 20px;
-  background-color: #F4E285;
-  ;
+  background-color: #f4e285;
 }
-.alert-high{
+.alert-high {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,11 +114,8 @@ span {
   border-radius: 4px;
   width: 20px;
   height: 20px;
-  background-color: #FB9B9B;
-  ;
+  background-color: #fb9b9b;
 }
-
-
 
 /*Top Navagation*/
 .topnav {
@@ -129,34 +125,34 @@ span {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  height:80px;
+  height: 80px;
   background-color: transparent;
   overflow: hidden;
   flex-wrap: nowrap;
   gap: 200px;
-  box-shadow: 0px 1px 0px rgba(18, 32, 59, 0.09) ;
+  box-shadow: 0px 1px 0px rgba(18, 32, 59, 0.09);
 }
 /*item 1 - image*/
-.topnav .logo-img{
+.topnav .logo-img {
   height: 50px;
   padding-left: 2%;
   left: 45px;
 }
 
 /*item 2 - searchbox wrapper */
-.topnav .search-box{
+.topnav .search-box {
   display: flex;
   justify-content: space-between;
   width: 600px;
   height: 50px;
   background-color: #ffffff;
 
-  border: 1px solid #E4E4E7;
+  border: 1px solid #e4e4e7;
   border-radius: 10px;
 }
 
 /*search field*/
-.search-box input{
+.search-box input {
   flex-grow: 1;
   background: transparent;
   padding-left: 2%;
@@ -167,17 +163,17 @@ span {
   color: #333;
 }
 /*search field temp text*/
-::placeholder{
+::placeholder {
   color: #555;
 }
 /*submit button*/
-.search-box button{
+.search-box button {
   background: transparent;
   border: 0;
   outline: 0;
   padding-right: 2%;
 }
-.search-box .icon{
+.search-box .icon {
   /*font size is the weight of the icon line*/
   /*size={25} can be added inline after the icon name.*/
   color: #555;
@@ -187,7 +183,8 @@ span {
 }
 
 .task-page {
-  margin-left: 250px;
-  margin-top: 75px;
+  margin-left: 25px;
+  margin-top: 25px;
   margin-right: 25px;
+  margin-bottom: 200px;
 }

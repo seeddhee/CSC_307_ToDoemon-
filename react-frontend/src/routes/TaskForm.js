@@ -6,15 +6,15 @@ import Controls from "../components/controls/Controls";
 import { useForm, Form } from "../components/tasks/useForm";
 
 const taskDifficulty = [
-  { id: "easy", title: "Easy" },
-  { id: "medium", title: "Medium" },
-  { id: "hard", title: "Hard" }
+  { id: "Easy", title: "Easy" },
+  { id: "Medium", title: "Medium" },
+  { id: "Hard", title: "Hard" }
 ];
 
 const initialFValues = {
   id: 0,
   taskDescription: "",
-  difficulty: "medium",
+  difficulty: "Medium",
   date: dayjs(Date.now())
 };
 
@@ -71,8 +71,13 @@ export default function TaskForm(props) {
           onChange={handleInputChange}
           items={taskDifficulty}
         />
-        <Controls.ContainedButton type="submit" text="Submit" />
-        <Controls.ContainedButton text="Reset" color="default" onClick={resetForm} />
+        <Controls.ContainedButton type="submit" text="Submit" color="success" />
+        <Controls.ContainedButton
+          text="Reset"
+          variant="outlined"
+          color="default"
+          onClick={resetForm}
+        />
       </Stack>
     </Form>
   );

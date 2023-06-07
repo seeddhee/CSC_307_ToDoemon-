@@ -65,7 +65,8 @@
 .pet-display {
   display: flex;
   flex-direction: column;
-  position: relative; 
+  align-items: center;
+  position: relative;
   float: left;
 }
 
@@ -76,17 +77,18 @@
 
 .pet-display .pet-image {
   align-self: center;
-  margin-top: -50%;
-  width: 60%;
+  margin-top: -75%;
+  width: 90%;
 }
 .pet-display .displayed-item {
-  max-height: 80px;
-  max-width: 80px;
+  max-height: 120px;
+  max-width: 120px;
 }
 
 #background-display {
   border: 13px solid #f4e285;
   border-radius: 85px;
+  width: 150%;
 }
 
 .pet-page-title {
@@ -160,7 +162,6 @@
 
   max-height: 35%;
   overflow-y: auto;
-
 }
 
 .background-option {
@@ -188,18 +189,18 @@
 #cowboy-hat {
   transform: scaleX(-1);
   position: relative;
-  top: -163px;
-  left: 160px;
+  top: -270px;
+  left: 205px;
 }
 
 #mustache {
   position: relative;
-  top: -115px;
-  left: 110px;
+  top: -198px;
+  left: 133px;
 }
 
 #flower {
   position: relative;
-  top: -250px;
+  top: -400px;
   left: 0px;
 }
