@@ -1,10 +1,9 @@
 .settings-page {
   display: flex;
-  flex: 0.8;
   flex-direction: column;
   padding-top: 30px;
-  /*padding-left: 250px;*/
   height: 100vh;
+  width: 100vw;
   letter-spacing: 0.1em;
   line-height: 1.5;
 }
@@ -21,6 +20,7 @@
 
 .settings-inputs {
   margin-left: 15%;
+  width: 65%;
 }
 
 .settings-buttons {
@@ -35,3 +35,21 @@
   width: 40%;
 }
 
+.settings-inputs input {
+  max-width: 100%;
+}
+.settings-inputs .my-input {
+  width: 100%;
+}
+
+.input-checkmark {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.checkmark-img {
+  max-height: 10vh;
+  width: auto;
+  padding-right: 2vw;
+}

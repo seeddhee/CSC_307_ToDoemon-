@@ -7,6 +7,7 @@ import "../style/settings-style.css";
 
 function Settings(props) {
   const [status, setStatus] = useState(true);
+  const checkmark = require("../images/checkmark.png");
   document.title = "Taskemon | Settings";
 
   const [user, setUser] = useState({
@@ -43,22 +44,36 @@ function Settings(props) {
     <div className="settings-page">
       <Title text="Edit profile" />
       <div className="settings-inputs">
-        <MyInput
-          name="Email"
-          type="text"
-          placeholder="productivedino@gmail.com"
-          status={status}
-          value={user.Email}
-          onChange={handleChange}
-        />
-        <MyInput
-          name="Username"
-          type="text"
-          placeholder="productivedino"
-          status={status}
-          value={user.Username}
-          onChange={handleChange}
-        />
+        <div className="input-checkmark">
+          <img
+            src={checkmark}
+            className="checkmark-img"
+            style={{ display: status ? "block" : "none" }}
+          />
+          <MyInput
+            name="Email"
+            type="text"
+            placeholder="productivedino@gmail.com"
+            status={status}
+            value={user.Email}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="input-checkmark">
+          <img
+            src={checkmark}
+            className="checkmark-img"
+            style={{ display: status ? "block" : "none" }}
+          />
+          <MyInput
+            name="Username"
+            type="text"
+            placeholder="productivedino"
+            status={status}
+            value={user.Username}
+            onChange={handleChange}
+          />
+        </div>
       </div>
       <div className="settings-buttons">
         <LinkButton text="Cancel" status={status} onClick={handleCancel} />
