@@ -2,7 +2,7 @@ const KEYS = {
   employees: "employees",
   employeeId: "employeeId"
 };
-localStorage.clear();
+
 export function insertEmployee(data) {
   let employees = getAllEmployees();
   data["id"] = generateEmployeeId();

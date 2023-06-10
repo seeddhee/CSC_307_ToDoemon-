@@ -16,8 +16,7 @@
 }
 
 /*Shell Pages - base styles*/
-.shop,
-.tasks {
+.shop {
   display: flex;
   flex: 2;
   height: 100vh;
@@ -186,5 +185,5 @@ span {
   margin-left: 25px;
   margin-top: 25px;
   margin-right: 25px;
-  margin-bottom: 200px;
+  margin-bottom: 1000px;
 }

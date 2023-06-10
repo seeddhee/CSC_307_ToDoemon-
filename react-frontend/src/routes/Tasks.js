@@ -11,6 +11,8 @@ import Popup from "../components/tasks/Popup";
 import EditIcon from "@mui/icons-material/Edit";
 import CloseIcon from "@mui/icons-material/Close";
 
+import "../style/task-style.css";
+
 const PREFIX = "Tasks";
 
 const classes = {

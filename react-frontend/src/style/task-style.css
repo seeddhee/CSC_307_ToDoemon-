@@ -1,0 +1,8 @@
+.tasks {
+  display: flex;
+  flex: 2;
+  color: #000000;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
