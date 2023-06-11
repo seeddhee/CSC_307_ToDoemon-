@@ -29,11 +29,13 @@ For the overwhelmed individual who needs extra motivation to get stuff done, the
 UI Prototype:
 
 https://www.figma.com/file/46hGuVgBhqZlDLzligYqfO/Todo-Web?type=design&node-id=101-83&t=ScWzpH1ElqZcYvuT-0
+
 Date Last Updated : 6/10/23
 
 Development environment set up:
 
 Built With:
+
 React 
 
 MUI
@@ -46,15 +48,20 @@ Prerequisites:
 The basic requirements for building the executable are:
 
 A working browser application 
+
 VSCode or any other equivalent code editor
+
 Node Package Manager 
+
 Cloning the project
+
 git clone https://github.com/seeddhee/CSC_307_ToDoemon-.git <Your-Build-Directory>
 
   
 Getting packages and dependencies:
   
 To get all package modules required to build the project run:
+  
 npm install (The package.json file provides a concise reference for all project dependencies needed for building the project.)
 
 
@@ -76,6 +83,6 @@ npm run test
   
 This should run all unit test found in the _________ from the testbed folder.
 
-Wiki Page (Class Diagram)
+Wiki Page 
   
 https://github.com/seeddhee/CSC_307_ToDoemon-.wiki.git
