@@ -1,3 +1,5 @@
+[![Azure Static Web Apps CI/CD](https://github.com/seeddhee/CSC_307_ToDoemon-/actions/workflows/azure-static-web-apps-gray-island-06e32071e.yml/badge.svg)](https://github.com/seeddhee/CSC_307_ToDoemon-/actions/workflows/azure-static-web-apps-gray-island-06e32071e.yml)
+
 # CSC_307_ToDoemon-
 
 # Code Linter
