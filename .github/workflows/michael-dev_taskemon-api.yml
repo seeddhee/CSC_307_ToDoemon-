@@ -22,6 +22,12 @@ jobs:
           node-version: "18.x"
 
       - name: npm install, build, and test
+        env:
+          MONGO_DB: Taskemon
+          MONGO_USER: mhayes20
+          MONGO_PWD: HZvuv4bJRHAwPw04
+          MONGO_CLUSTER: cluster0.ampehmm.mongodb.net
+
         working-directory: ./expressjs-backend
         run: |
           npm install
