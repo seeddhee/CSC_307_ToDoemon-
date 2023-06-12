@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1686547331151" clover="3.2.0">
-  <project timestamp="1686547331151" name="All files">
+<coverage generated="1686578870195" clover="3.2.0">
+  <project timestamp="1686578870195" name="All files">
     <metrics statements="37" coveredstatements="36" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4" elements="42" coveredelements="40" complexity="0" loc="37" ncloc="37" packages="1" files="2" classes="2"/>
     <file name="user-services.js" path="C:\Users\Viper\Desktop\307\CSC_307_ToDoemon-\expressjs-backend\models\user-services.js">
       <metrics statements="33" coveredstatements="32" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>

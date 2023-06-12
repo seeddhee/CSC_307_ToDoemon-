@@ -27,7 +27,6 @@ jobs:
           MONGO_USER: mhayes20
           MONGO_PWD: HZvuv4bJRHAwPw04
           MONGO_CLUSTER: cluster0.ampehmm.mongodb.net
-
         working-directory: ./expressjs-backend
         run: |
           npm install

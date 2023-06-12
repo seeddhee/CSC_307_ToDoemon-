@@ -6,17 +6,13 @@ const userServices = require("./models/user-services");
 app.use(cors());
 app.use(express.json());
 
-// app.get("/users", async (req, res) => {
-//   const name = req.query.name;
-//   const job = req.query.job;
-//   try {
-//     const result = await userServices.getUsers(name, job);
-//     res.send({ users_list: result });
-//   } catch (error) {
-//     console.log(error);
-//     res.status(500).send("An error occured in the server");
-//   }
-// });
+app.get("/", async (req, res) => {
+  res.send("Taskemon-API-Service");
+});
+
+app.get("/users", async (req, res) => {
+  res.send("You are at /users");
+});
 
 app.get("/users/:id", async (req, res) => {
   const id = req.params["id"]; //or req.params.id
@@ -61,7 +57,5 @@ app.patch("/users/:id", async (req, res) => {
 });
 
 app.listen(process.env.PORT || port, () => {
-  console.log(
-    `Example app listening at http://localhost:${process.env.PORT || port}`
-  );
+  console.log("REST API is listening.");
 });
