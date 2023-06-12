@@ -1,5 +1,6 @@
 const userServices = require("./models/user-services.js");
 const dotenv = require("dotenv");
+const mongoose = require("mongoose");
 dotenv.config();
 
 const testUser = {
@@ -15,6 +16,29 @@ const testUser = {
 };
 
 let addedUser;
+
+test("Testing mongoose connection", async () => {
+  mongoose
+    .connect(
+      "mongodb+srv://" +
+        process.env.MONGO_USER +
+        ":" +
+        process.env.MONGO_PWD +
+        "@" +
+        process.env.MONGO_CLUSTER +
+        "/" +
+        process.env.MONGO_DB +
+        "?retryWrites=true&w=majority",
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }
+    )
+    .catch((error) => {
+      console.log(error);
+      exit(-1);
+    });
+});
 
 test("Testing addUser -- success", async () => {
   let result = await userServices.addUser(testUser);
