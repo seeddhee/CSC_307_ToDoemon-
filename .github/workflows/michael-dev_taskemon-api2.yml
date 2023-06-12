@@ -15,10 +15,10 @@ defaults:
 
 env:
   AZURE_WEBAPP_PACKAGE_PATH: expressjs-backend
-  MONGO_DB: Taskemon
-  MONGO_USER: mhayes20
-  MONGO_PWD: HZvuv4bJRHAwPw04
-  MONGO_CLUSTER: cluster0.ampehmm.mongodb.net
+  MONGO_DB: ${{ secrets.MONGO_DB }}
+  MONGO_USER: ${{ secrets.MONGO_USER }}
+  MONGO_PWD: ${{ secrets.MONGO_PWD }}
+  MONGO_CLUSTER: ${{ secrets.MONGO_CLUSTER }}
 
 jobs:
   build:
