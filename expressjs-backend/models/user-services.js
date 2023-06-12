@@ -5,6 +5,18 @@ const User = require("./user");
 mongoose.set("debug", true);
 dotenv.config();
 
+console.log(
+  "mongodb+srv://" +
+    process.env.MONGO_USER +
+    ":" +
+    process.env.MONGO_PWD +
+    "@" +
+    process.env.MONGO_CLUSTER +
+    "/" +
+    process.env.MONGO_DB +
+    "?retryWrites=true&w=majority"
+);
+
 mongoose
   .connect(
     "mongodb+srv://" +
