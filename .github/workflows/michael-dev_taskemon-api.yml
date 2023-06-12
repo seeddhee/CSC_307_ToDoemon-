@@ -59,4 +59,4 @@ jobs:
           app-name: "taskemon-api"
           slot-name: "Production"
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3095C1F394304FA09FC51E4B8A4A2AE4 }}
-          package: .
+          package: expressjs-backend
