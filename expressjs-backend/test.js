@@ -1,5 +1,5 @@
 const userServices = require("./models/user-services.js");
-const dotenv = require("dotenv-azure");
+const dotenv = require("dotenv");
 dotenv.config();
 
 const testUser = {
@@ -16,8 +16,10 @@ const testUser = {
 
 let addedUser;
 
-test("Testing mongoose connection", async () => {
+test("Testing environment", async () => {
+  dotenv.config();
   console.log("Mongo Username: " + process.env.MONGO_USER);
+  expect(process.env.MONGO_USER).toBe("mhayes-desktop");
 });
 
 test("Testing addUser -- success", async () => {
