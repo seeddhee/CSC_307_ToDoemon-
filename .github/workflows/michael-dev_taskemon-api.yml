@@ -35,10 +35,10 @@ jobs:
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
-        working-directory: ./expressjs-backend
         with:
           name: node-app
           path: .
+        working-directory: ./expressjs-backend
 
   deploy:
     runs-on: ubuntu-latest
