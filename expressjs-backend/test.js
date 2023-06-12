@@ -1,4 +1,6 @@
 const userServices = require("./models/user-services.js");
+const dotenv = require("dotenv");
+dotenv.config();
 
 const testUser = {
   username: "Test User",
