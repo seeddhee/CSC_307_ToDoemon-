@@ -4,6 +4,7 @@ import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
 
 export default class MyCalendar extends React.Component {
   render() {
+    document.title = "Taskemon | Calendar";
     return <FullCalendar plugins={[dayGridPlugin]} initialView="dayGridMonth" />;
   }
 }
