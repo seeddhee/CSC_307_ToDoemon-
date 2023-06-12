@@ -7,11 +7,11 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", async (req, res) => {
-  res.send("Taskemon-API-Service");
+  res.status(202).send("Taskemon-API-Service");
 });
 
 app.get("/users", async (req, res) => {
-  res.send("You are at /users");
+  res.status(202).send("You are at /users");
 });
 
 app.get("/users/:id", async (req, res) => {
@@ -21,7 +21,7 @@ app.get("/users/:id", async (req, res) => {
     res.status(404).send("Resource not found.");
   else {
     result = { Users: result };
-    res.send(result);
+    res.status(202).send(result);
   }
 });
 
