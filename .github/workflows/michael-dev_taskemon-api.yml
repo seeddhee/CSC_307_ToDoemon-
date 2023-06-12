@@ -9,6 +9,13 @@ on:
       - michael-dev
   workflow_dispatch:
 
+defaults:
+  run:
+    working-directory: expressjs-backend
+
+env:
+  AZURE_WEBAPP_PACKAGE_PATH: expressjs-backend
+
 jobs:
   build:
     runs-on: windows-latest
@@ -59,4 +66,4 @@ jobs:
           app-name: "taskemon-api"
           slot-name: "Production"
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3095C1F394304FA09FC51E4B8A4A2AE4 }}
-          package: .
+          package: ${{env.AZURE_WEBAPP_PACKAGE_PATH}}
