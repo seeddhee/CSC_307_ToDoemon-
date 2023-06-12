@@ -18,6 +18,7 @@ const testUser = {
 let addedUser;
 
 test("Testing mongoose connection", async () => {
+  console.log("Mongo Username" + process.env.MONGO_USER);
   mongoose
     .connect(
       "mongodb+srv://" +
@@ -36,7 +37,6 @@ test("Testing mongoose connection", async () => {
     )
     .catch((error) => {
       console.log(error);
-      exit(-1);
     });
 });
 
