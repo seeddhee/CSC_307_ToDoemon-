@@ -1,6 +1,5 @@
 const userServices = require("./models/user-services.js");
-const dotenv = require("dotenv");
-const mongoose = require("mongoose");
+const dotenv = require("dotenv-azure");
 dotenv.config();
 
 const testUser = {
@@ -18,26 +17,7 @@ const testUser = {
 let addedUser;
 
 test("Testing mongoose connection", async () => {
-  console.log("Mongo Username" + process.env.MONGO_USER);
-  mongoose
-    .connect(
-      "mongodb+srv://" +
-        process.env.MONGO_USER +
-        ":" +
-        process.env.MONGO_PWD +
-        "@" +
-        process.env.MONGO_CLUSTER +
-        "/" +
-        process.env.MONGO_DB +
-        "?retryWrites=true&w=majority",
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
-    )
-    .catch((error) => {
-      console.log(error);
-    });
+  console.log("Mongo Username: " + process.env.MONGO_USER);
 });
 
 test("Testing addUser -- success", async () => {

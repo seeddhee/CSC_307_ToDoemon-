@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const userModel = require("./user");
 const dotenv = require("dotenv");
-const User = require("./user");
 mongoose.set("debug", true);
 dotenv.config();
 
