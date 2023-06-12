@@ -46,7 +46,7 @@ async function getUserById(id) {
   }
 }
 
-async function patchUserUsername(id, newUser) {
+async function patchUser(id, newUser) {
   let filter = { _id: id };
   let update = newUser;
   try {
@@ -65,7 +65,7 @@ async function addUser(user) {
     return savedUser;
   } catch (error) {
     console.log(error);
-    return false;
+    return undefined;
   }
 }
 
@@ -75,7 +75,7 @@ async function deleteUser(user) {
     return deletedUser;
   } catch (error) {
     console.log(error);
-    return false;
+    return undefined;
   }
 }
 
@@ -95,4 +95,4 @@ async function deleteUser(user) {
 exports.getUserById = getUserById;
 exports.addUser = addUser;
 exports.deleteUser = deleteUser;
-exports.patchUserUsername = patchUserUsername;
+exports.patchUser = patchUser;

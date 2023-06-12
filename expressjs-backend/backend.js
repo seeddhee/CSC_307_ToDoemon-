@@ -52,7 +52,7 @@ app.delete("/users/:id", async (req, res) => {
 
 app.patch("/users/:id", async (req, res) => {
   const id = req.params.id;
-  const updatedUser = await userServices.patchUserUsername(id, req.body);
+  const updatedUser = await userServices.patchUser(id, req.body);
   if (!updatedUser) {
     res.status(404).send("Resource not found.");
   } else {
