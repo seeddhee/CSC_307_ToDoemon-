@@ -1,13 +1,24 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - taskemon-api2
+name: Backend = taskemon-api2
 
 on:
   push:
     branches:
       - michael-dev
   workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: expressjs-backend
+
+env:
+  AZURE_WEBAPP_PACKAGE_PATH: expressjs-backend
+  MONGO_DB: Taskemon
+  MONGO_USER: mhayes20
+  MONGO_PWD: HZvuv4bJRHAwPw04
+  MONGO_CLUSTER: cluster0.ampehmm.mongodb.net
 
 jobs:
   build:
@@ -19,14 +30,14 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v1
         with:
-          node-version: '18.x'
+          node-version: "18.x"
 
       - name: npm install, build, and test
         run: |
           npm install
           npm run build --if-present
           npm run test --if-present
-      
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
@@ -37,7 +48,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'Production'
+      name: "Production"
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -46,11 +57,11 @@ jobs:
         with:
           name: node-app
 
-      - name: 'Deploy to Azure Web App'
+      - name: "Deploy to Azure Web App"
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'taskemon-api2'
-          slot-name: 'Production'
+          app-name: "taskemon-api2"
+          slot-name: "Production"
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_56266FCD50184E46AFF83674CD220A8C }}
-          package: .
+          package: ${{env.AZURE_WEBAPP_PACKAGE_PATH}}
