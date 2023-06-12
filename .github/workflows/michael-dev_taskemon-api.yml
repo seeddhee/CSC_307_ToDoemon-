@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: .
+          path: ./expressjs-backend
 
   deploy:
     runs-on: ubuntu-latest
