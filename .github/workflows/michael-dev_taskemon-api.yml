@@ -38,7 +38,6 @@ jobs:
         with:
           name: node-app
           path: .
-        working-directory: ./expressjs-backend
 
   deploy:
     runs-on: ubuntu-latest
