@@ -140,6 +140,9 @@
   font-size: 22px;
   box-sizing: border-box;
 }
+.my-input .error {
+  border: 2px solid red;
+}
 .my-input input[type="password"] {
   font-family: Verdana;
 }
@@ -216,7 +219,7 @@
 .round input {
   width: 3em;
   height: 3em;
-  background-color: #fff;
+  background-color: white;
 
   border: 2px solid #9eb0ea;
   border-radius: 50%;
@@ -251,4 +254,10 @@
 
 .round input:checked + label {
   opacity: 1;
+}
+
+.error-message p {
+  color: red;
+  padding-top: 5px;
+  margin-bottom: -20px;
 }

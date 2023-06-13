@@ -1,0 +1,55 @@
+.settings-page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  height: 100vh;
+  width: 100vw;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+}
+
+.title {
+  font-family: "Overlock", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  margin-block: 0;
+  color: black;
+  opacity: 0.7;
+}
+
+.settings-inputs {
+  margin-left: 15%;
+  width: 65%;
+}
+
+.settings-buttons {
+  margin-left: 15%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.settings-buttons .link-button {
+  width: 40%;
+}
+
+.settings-inputs input {
+  max-width: 100%;
+}
+.settings-inputs .my-input {
+  width: 100%;
+}
+
+.input-checkmark {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.checkmark-img {
+  max-height: 10vh;
+  width: auto;
+  padding-right: 2vw;
+}

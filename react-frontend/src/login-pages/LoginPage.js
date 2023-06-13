@@ -9,11 +9,21 @@ import "../style/login-style.css";
 function LoginPage() {
   /* eslint-disable no-unused-vars */
   const [user, setUser] = useState({
-    username: "",
-    password: ""
+    "Username or Email": "",
+    Password: ""
   });
 
-  document.title = "Login";
+  function handleChange(event) {
+    const { id, value } = event.target;
+    setUser((values) => ({ ...values, [id]: value }));
+  }
+
+  function signIn() {
+    console.log(user);
+    setUser({ "Username or Email": "", Password: "" });
+  }
+
+  document.title = "Taskemon | Login";
   const happy_dino = require("../images/happy_dino.png");
   return (
     <div className="login-style">
@@ -25,8 +35,20 @@ function LoginPage() {
           link="Sign Up"
           to="/signup"
         />
-        <MyInput name="Username or Email" type="text" placeholder="productive_dino@gmail.com" />
-        <MyInput name="Password" type="password" placeholder="●●●●●●●●●" />
+        <MyInput
+          name="Username or Email"
+          type="text"
+          placeholder="productive_dino@gmail.com"
+          value={user.username}
+          onChange={handleChange}
+        />
+        <MyInput
+          name="Password"
+          type="password"
+          placeholder="●●●●●●●●●"
+          value={user.password}
+          onChange={handleChange}
+        />
 
         <div className="remember-forgot">
           <div className="remember">
@@ -40,7 +62,7 @@ function LoginPage() {
           <Link to="/forgot">Forgot Password?</Link>
         </div>
 
-        <LinkButton location="/dashboard" text="Sign In" />
+        <LinkButton location="/dashboard" text="Sign In" onClick={signIn} />
       </div>
     </div>
   );

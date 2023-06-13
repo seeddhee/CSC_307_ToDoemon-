@@ -1,0 +1,147 @@
+.shop{
+	display: flex;
+	flex: 2;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+	padding-top: 30px;
+	height: 100vh;
+	color: #000000;
+}
+
+.shop title{
+	font-family: "Overlock", sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 40px;
+	margin-block: 0;
+	color: black;
+	opacity: 0.7;
+}
+
+.shop .wrapper-items-mascot{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 32px;
+}
+.shop .pet{
+  display: flex;
+  align-self: center;
+}
+
+.shop .item-carousel{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #789ade;
+  align-items: center;
+  border-radius: 16px;
+}
+
+/*image tiles*/
+.store-item {
+  height: 20%;
+  width: 20%;
+  margin: 16px;
+}
+
+.mascot-img{
+  height: 300px;
+  width: 300px;
+}
+
+/* 
+
+.shop .shopleft-div {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 5vh;
+  margin-right: 12vh;
+}
+
+.shop .tb {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 300px;
+  margin-right: 10px;
+}
+
+.shop .tx {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 360px;
+  margin-right: 90px;
+}
+
+.shop .rec {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 30px;
+  margin-right: 380px;
+}
+
+.shop .pet {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 60px;
+  margin-right: 700px;
+}
+
+.shop .hat {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 40px;
+  margin-right: 1250px;
+}
+
+.shop .mustache {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 40px;
+  margin-right: 1000px;
+}
+
+.shop .bracelet {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 44px;
+  margin-right: 710px;
+}
+
+.shop .cs {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 48px;
+  margin-right: 470px;
+} */
+
+/* .shop .ShopPage_Title {
+  align-self: flex-end;
+  margin-top: auto;
+  margin-bottom: 112vh;
+  margin-right: 22122vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+
+.shop .ShopRighttDiv {
+  align-self: flex-end;
+  margin-top: auto;
+  margin-bottom: 112vh;
+  margin-right: 22122vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+} */

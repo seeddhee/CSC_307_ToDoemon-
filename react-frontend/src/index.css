@@ -1,40 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
+/*Global style*/
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Lato", sans-serif;
 }
-
-/* Pages - will remove*/
-.dashboard,
-.shop,
-.tasks,
-.pet,
-.settings {
+/*Main wrapper holding all items*/
+.container {
   display: flex;
-  height: 100vh;
-  top: 0;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  color: #000000;
+  height: 100%;
+  min-height: 100%;
+  gap: 64px;
 }
 
+/*Shell Pages - base styles*/
+.shop {
+  display: flex;
+  flex: 2;
+  height: 100vh;
+  font-size: 3rem;
+  color: #000000;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
 
 /* Navbar CSS */
 .nav-menu {
-  background-color: #ffffff;
-  height: 100vh;
-  width: 15vw;
-  min-width: 200px;
-  position: absolute;
-  top: 0;
+  display: flex;
+  width: 10%;
+  min-width: 300px;
+  top: 80px;
   left: 0;
-  /* background-color: #8CB369; */
-  background-color: #5B8E7D;
+  background: #5b8e7d;
   padding-top: 60px;
+  align-items: stretch;
+}
+
+span {
+  margin-left: 16px;
 }
 
 .nav-text {
@@ -48,7 +54,7 @@
 
 .nav-text a {
   text-decoration: none;
-  color: #151414;
+  color: #fffdfd;
   font-size: 18px;
   width: 95%;
   height: 100%;
@@ -56,18 +62,128 @@
   align-items: center;
   padding: 0 16px;
   border-radius: 4px;
+  justify-content: space-between;
+}
+.nav-item {
+  justify-content: flex-start;
 }
 
 .nav-text a:hover {
-  background-color: #000000;
-  color: #fff;
+  background-color: #ffffff;
+  color: #e6774a;
+}
+
+.activeTab a {
+  background-color: #ffffff;
+  color: #e6774a;
 }
 
 .nav-menu-items {
   width: 100%;
 }
 
-span {
-  margin-left: 16px;
+.alert-low {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  color: #000000;
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  background-color: #b1e5fc;
+}
+.alert-med {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  color: #000000;
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  background-color: #f4e285;
+}
+.alert-high {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  color: #000000;
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  background-color: #fb9b9b;
 }
 
+/*Top Navagation*/
+.topnav {
+  flex: 1 0 100%;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 80px;
+  background-color: transparent;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  gap: 200px;
+  box-shadow: 0px 1px 0px rgba(18, 32, 59, 0.09);
+}
+/*item 1 - image*/
+.topnav .logo-img {
+  height: 50px;
+  padding-left: 2%;
+  left: 45px;
+}
+
+/*item 2 - searchbox wrapper */
+.topnav .search-box {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  height: 50px;
+  background-color: #ffffff;
+
+  border: 1px solid #e4e4e7;
+  border-radius: 10px;
+}
+
+/*search field*/
+.search-box input {
+  flex-grow: 1;
+  background: transparent;
+  padding-left: 2%;
+  padding-right: 2%;
+  border: 0px;
+  outline: 0px;
+  font-size: 18px;
+  color: #333;
+}
+/*search field temp text*/
+::placeholder {
+  color: #555;
+}
+/*submit button*/
+.search-box button {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding-right: 2%;
+}
+.search-box .icon {
+  /*font size is the weight of the icon line*/
+  /*size={25} can be added inline after the icon name.*/
+  color: #555;
+  width: 25px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.task-page {
+  margin-left: 25px;
+  margin-top: 25px;
+  margin-right: 25px;
+  margin-bottom: 1000px;
+}

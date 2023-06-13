@@ -28,6 +28,17 @@ IDE Plugins that will be useful:
 # Navagation
 npm install react-router react-icons
 
+
+Icon gallery
+https://react-icons.github.io/react-icons
+
+
+react calendar
+npm install --save \
+  @fullcalendar/core \
+  @fullcalendar/react \
+  @fullcalendar/daygrid
+
 # Project Blurb:
 
 For the overwhelmed individual who needs extra motivation to get stuff done, the Taskemon is a productivity application that allows users to keep track of their daily tasks. Unlike Microsoft To Do, our product brings a gamified approach that allows users to feel rewarded for their completed tasks through virtual companions. 
@@ -87,3 +98,4 @@ npm install (The package.json file provides a concise reference for all project 
 ## Deployment Note
 - The deployments are on the branch michael-dev, found at https://github.com/seeddhee/CSC_307_ToDoemon-/tree/michael-dev
 - Now that we understand how to setup deployments, it would be relativly simple to set ones up for develop and/or main, but out of fear of breaking the project the night its due, we will be leaving the deployments on the michael-dev branch, but will insure that branch is up to date.
+
