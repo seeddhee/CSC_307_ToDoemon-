@@ -6,7 +6,7 @@ name: Backend - taskemon-api2
 on:
   push:
     branches:
-      - michael-dev
+      - [main, develop, michael-dev]
   workflow_dispatch:
 
 defaults:

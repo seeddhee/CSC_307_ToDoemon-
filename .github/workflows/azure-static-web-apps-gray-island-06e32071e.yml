@@ -3,11 +3,11 @@ name: Frontend Static Web App
 on:
   push:
     branches:
-      - michael-dev
+      - [main, develop, michael-dev]
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
-      - michael-dev
+      - [main, develop, michael-dev]
 
 jobs:
   build_and_deploy_job:
