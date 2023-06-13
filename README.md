@@ -83,3 +83,7 @@ npm install (The package.json file provides a concise reference for all project 
 ## Troubleshooting Deployment
 - Try loading the backend url before loading the frontend
 - For the frontend, try navigating to the root URL and reloading
+
+## Deployment Note
+- The deployments are on the branch michael-dev, found at https://github.com/seeddhee/CSC_307_ToDoemon-/tree/michael-dev
+- Now that we understand how to setup deployments, it would be relativly simple to set ones up for develop and/or main, but out of fear of breaking the project the night its due, we will be leaving the deployments on the michael-dev branch, but will insure that branch is up to date.
