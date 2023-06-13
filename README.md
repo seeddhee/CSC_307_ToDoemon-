@@ -60,13 +60,10 @@ git clone https://github.com/seeddhee/CSC_307_ToDoemon-.git <Your-Build-Director
   
 npm install (The package.json file provides a concise reference for all project dependencies needed for building the project.)
 
-
-# To build the project run:
-  
-npm run build
-
 # Running
-  
+## To build the project run:
+- npm run build
+
 ## To run the app locally
 - npm start
 - Executing the command will open the webpack-generated page on your localhost at port 3000, allowing you to easily view it in your browser.
@@ -77,3 +74,9 @@ npm run build
 
 # Wiki Page 
 - https://github.com/seeddhee/CSC_307_ToDoemon-.wiki.git
+
+
+# Depolyments 
+- Frontend: https://gray-island-06e32071e.3.azurestaticapps.net
+- Backend: https://taskemon-api2.azurewebsites.net
+Note: If having problems loading a page, try refreshing or navigating to the root URL and refreshing
