@@ -79,4 +79,5 @@ npm install (The package.json file provides a concise reference for all project 
 # Depolyments 
 - Frontend: https://gray-island-06e32071e.3.azurestaticapps.net
 - Backend: https://taskemon-api2.azurewebsites.net
+
 Note: If having problems loading a page, try refreshing or navigating to the root URL and refreshing
