@@ -1,4 +1,8 @@
-[![Azure Static Web Apps CI/CD](https://github.com/seeddhee/CSC_307_ToDoemon-/actions/workflows/azure-static-web-apps-gray-island-06e32071e.yml/badge.svg)](https://github.com/seeddhee/CSC_307_ToDoemon-/actions/workflows/azure-static-web-apps-gray-island-06e32071e.yml)
+[![Frontend CD](https://github.com/seeddhee/CSC_307_ToDoemon-/actions/workflows/azure-static-web-apps-gray-island-06e32071e.yml/badge.svg)](https://github.com/seeddhee/CSC_307_ToDoemon-/actions/workflows/azure-static-web-apps-gray-island-06e32071e.yml)
+
+[![Backend CD](https://github.com/seeddhee/CSC_307_ToDoemon-/actions/workflows/michael-dev_taskemon-api2.yml/badge.svg)](https://github.com/seeddhee/CSC_307_ToDoemon-/actions/workflows/michael-dev_taskemon-api2.yml)
+
+[![Node JS CI](https://github.com/seeddhee/CSC_307_ToDoemon-/actions/workflows/node.js.yml/badge.svg)](https://github.com/seeddhee/CSC_307_ToDoemon-/actions/workflows/node.js.yml)
 
 # CSC_307_ToDoemon-
 
