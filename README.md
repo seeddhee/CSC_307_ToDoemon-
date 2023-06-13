@@ -76,7 +76,7 @@ npm install (The package.json file provides a concise reference for all project 
 - https://github.com/seeddhee/CSC_307_ToDoemon-.wiki.git
 
 
-# Depolyments 
+# Deployments 
 - Frontend: https://gray-island-06e32071e.3.azurestaticapps.net
 - Backend: https://taskemon-api2.azurewebsites.net
 
