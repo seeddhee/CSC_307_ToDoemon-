@@ -12,6 +12,7 @@ import BRACE from "../components/shop/bracelet.js";
 import "../style/petstore-style.css";
 
 function Shop() {
+  document.title = "Taskemon | Virtual Shop";
   const cool_dino = require("../images/cool_dino.png");
   const textbox = require("../images/textbox.png");
   const txt = require("../images/text.png");
