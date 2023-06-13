@@ -6,17 +6,13 @@ const userServices = require("./models/user-services");
 app.use(cors());
 app.use(express.json());
 
-// app.get("/users", async (req, res) => {
-//   const name = req.query.name;
-//   const job = req.query.job;
-//   try {
-//     const result = await userServices.getUsers(name, job);
-//     res.send({ users_list: result });
-//   } catch (error) {
-//     console.log(error);
-//     res.status(500).send("An error occured in the server");
-//   }
-// });
+app.get("/", async (req, res) => {
+  res.status(202).send("Taskemon-API-Service");
+});
+
+app.get("/users", async (req, res) => {
+  res.status(202).send("You are at /users");
+});
 
 app.get("/users/:id", async (req, res) => {
   const id = req.params["id"]; //or req.params.id
@@ -25,7 +21,7 @@ app.get("/users/:id", async (req, res) => {
     res.status(404).send("Resource not found.");
   else {
     result = { Users: result };
-    res.send(result);
+    res.status(202).send(result);
   }
 });
 
@@ -52,7 +48,7 @@ app.delete("/users/:id", async (req, res) => {
 
 app.patch("/users/:id", async (req, res) => {
   const id = req.params.id;
-  const updatedUser = await userServices.patchUserUsername(id, req.body);
+  const updatedUser = await userServices.patchUser(id, req.body);
   if (!updatedUser) {
     res.status(404).send("Resource not found.");
   } else {
@@ -60,6 +56,6 @@ app.patch("/users/:id", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+app.listen(process.env.PORT || port, () => {
+  console.log("REST API is listening.");
 });

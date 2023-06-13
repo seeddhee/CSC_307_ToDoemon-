@@ -22,7 +22,7 @@ function MyApp() {
   const [alertObjState, setAlertObjectState] = React.useState(alertObj);
   async function getUserById(id) {
     try {
-      const response = await axios.get("http://localhost:8000/users/" + id);
+      const response = await axios.get("https://taskemon-api2.azurewebsites.net/users/" + id);
       return response.data.Users;
     } catch (error) {
       console.log(error);
@@ -32,10 +32,13 @@ function MyApp() {
 
   async function updateUser(Username, Email) {
     try {
-      const response = await axios.patch("http://localhost:8000/users/" + userId, {
-        username: Username,
-        email: Email
-      });
+      const response = await axios.patch(
+        "https://taskemon-api2.azurewebsites.net/users/" + userId,
+        {
+          username: Username,
+          email: Email
+        }
+      );
       if (response.status === 200) {
         getUserById(userId).then((result) => {
           if (result) setUser(result);

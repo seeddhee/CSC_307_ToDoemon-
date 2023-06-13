@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 function MyInput(props) {
+  //Unneccessary until we can change password
   if (props.type == "password") {
     const [passwordShown, setPasswordShown] = useState(false);
     const togglePassword = () => {
@@ -37,6 +38,7 @@ function MyInput(props) {
         value={props.value}
         className={props.className}
         readOnly={props.status}
+        style={{ border: props.status ? "2px solid #5b8e7d" : "2px solid #789ade" }}
       />
     </div>
   );
