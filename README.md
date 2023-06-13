@@ -80,4 +80,6 @@ npm install (The package.json file provides a concise reference for all project 
 - Frontend: https://gray-island-06e32071e.3.azurestaticapps.net
 - Backend: https://taskemon-api2.azurewebsites.net
 
-Note: If having problems loading a page, try refreshing or navigating to the root URL and refreshing
+## Troubleshooting Deployment
+- Try loading the backend url before loading the frontend
+- For the frontend, try navigating to the root URL and reloading
