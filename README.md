@@ -73,7 +73,7 @@ npm install (The package.json file provides a concise reference for all project 
 - This should run all unit test found in the _________ from the testbed folder.
 
 # Wiki Page 
-- https://github.com/seeddhee/CSC_307_ToDoemon-.wiki.git
+- [https://github.com/seeddhee/CSC_307_ToDoemon-.wiki.git](https://github.com/seeddhee/CSC_307_ToDoemon-/wiki)
 
 
 # Deployments 
